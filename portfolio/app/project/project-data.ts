@@ -1,3 +1,4 @@
+import React from 'react';
 import { Zap, Shield, Rocket, Users, Wrench } from 'lucide-react';
 
 export type Project = {

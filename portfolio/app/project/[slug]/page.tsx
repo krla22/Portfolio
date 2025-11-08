@@ -38,11 +38,9 @@ export default function ProjectDetailPage() {
 
       <div className="flex-1 flex flex-col overflow-hidden">
         
-        {/* All project details are now in a single column */}
         <div className="flex-1 overflow-y-auto">
           <ProjectDetailContent project={project} />
 
-          {/* New Lighthouse Report Section */}
           {project.lighthouseImage && (
             <div className="mt-12">
               <h4 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">Performance Report</h4>
@@ -57,7 +55,6 @@ export default function ProjectDetailPage() {
             </div>
           )}
 
-          {/* Button is now at the bottom of the details */}
           <div className="py-8 mt-8 border-t border-gray-700">
             <a 
               href={project.link}
@@ -77,7 +74,7 @@ export default function ProjectDetailPage() {
   );
 }
 
-function ProjectDetailContent({ project }: { project: any }) {
+function ProjectDetailContent({ project }: { project: Project }) {
   return (
     <div className="space-y-8">
       <h1 className="text-4xl lg:text-5xl font-bold text-white">{project.title}</h1>
@@ -95,7 +92,7 @@ function ProjectDetailContent({ project }: { project: any }) {
       <div>
         <h4 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">Key Wins</h4>
         <ul className="space-y-3 mt-3">
-          {project.wins.map((win: any, index: number) => (
+          {project.wins.map((win, index) => (
             <li key={index} className="flex items-start space-x-3">
               <win.icon className="flex-shrink-0 w-5 h-5 text-emerald-400 mt-1" />
               <span className="text-white text-lg">{win.text}</span>
