@@ -64,7 +64,7 @@ export default function RootLayout({
               <div>
                 <div className="flex items-center space-x-5 mt-10">
                   <a 
-                    href="https://github.com/kurtrobinantonio"
+                    href="https://github.com/krla22"
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-gray-400 hover:text-emerald-400 transition-colors"

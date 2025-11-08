@@ -47,7 +47,7 @@ export default function PortfolioPage() {
       <footer className="mt-16 pt-12 border-t border-gray-700">
         <p className="text-center text-gray-500">
           &copy; {new Date().getFullYear()} Kurt Robin Antonio. All rights reserved.
-        </D>
+        </p>
       </footer>
     </>
   );
@@ -68,7 +68,7 @@ function ProjectCard({ project }: { project: Project }) {
   };
 
   return (
-    <div className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden transition-all hover:border-emerald-600/50 hover:shadow-lg flex flex-col">
+    <div className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden transition-all hover:border-emerald-600/50 hover:shadow-lg flex flex-col">
       <div className="relative">
         <img 
           src={project.image} 
