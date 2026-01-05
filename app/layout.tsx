@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Kurt Robin Antonio - Portfolio</title>
-        <meta name="description" content="Lead WordPress Developer & Full Stack Engineer Portfolio" />
+        <meta name="description" content="Senior Full Stack Developer & Technical SEO Lead" />
       </head>
       
       <body className={`${inter.variable} font-sans bg-gray-900`}>
