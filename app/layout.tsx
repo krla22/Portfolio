@@ -31,7 +31,7 @@ export default function RootLayout({
                   Kurt Robin Antonio
                 </h1>
                 <h2 className="text-lg font-medium text-emerald-400 mt-2 mb-6">
-                  Lead WordPress Developer & Full Stack Engineer
+                  Senior Full Stack Developer & Technical SEO Lead
                 </h2>
                 <p className="text-gray-400 mb-10 leading-relaxed">
                   Proven success delivering high-performance, scalable websites for US clients. 
