@@ -18,9 +18,10 @@ const geistMono = localFont({
 });
 
 const navItems = [
-  { num: '01', label: 'Projects', href: '/#projects' },
-  { num: '02', label: 'Other Work', href: '/#other-projects' },
-  { num: '03', label: 'Skills', href: '/#skills' },
+  { num: '01', label: 'Lead Gen', href: '/#lead-gen-projects' },
+  { num: '02', label: 'E-Commerce', href: '/#ecommerce-projects' },
+  { num: '03', label: 'Other Work', href: '/#other-projects' },
+  { num: '04', label: 'Skills', href: '/#skills' },
 ];
 
 export default function RootLayout({

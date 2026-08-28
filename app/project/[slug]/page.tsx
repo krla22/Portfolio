@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, notFound } from 'next/navigation';
 import Link from 'next/link';
-import { projects, archivedProjects, Project } from '../project-data';
+import { leadGenProjects, ecommerceProjects, archivedProjects, Project } from '../project-data';
 import { ArrowUpRight, ChevronLeft } from 'lucide-react';
 
 export default function ProjectDetailPage() {
@@ -11,7 +11,7 @@ export default function ProjectDetailPage() {
 
   useEffect(() => {
     if (params.slug) {
-      const allProjects = [...projects, ...archivedProjects];
+      const allProjects = [...leadGenProjects, ...ecommerceProjects, ...archivedProjects];
       const foundProject = allProjects.find(p => p.slug === params.slug);
       if (foundProject) {
         setProject(foundProject);

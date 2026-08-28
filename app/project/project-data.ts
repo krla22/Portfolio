@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Shield, Rocket, Users, Wrench, BarChart3 } from 'lucide-react';
+import { Zap, Shield, Rocket, Users, Wrench, BarChart3, Truck, CreditCard, Bot, Globe } from 'lucide-react';
 
 export type Project = {
   slug: string;
@@ -19,7 +19,7 @@ export type Project = {
   }[];
 };
 
-export const projects: Project[] = [
+export const leadGenProjects: Project[] = [
   {
     slug: "nuvision-auto-glass",
     title: "NuVision Auto Glass",
@@ -108,6 +108,61 @@ export const projects: Project[] = [
       { icon: Rocket, text: "Built on high-availability Kinsta architecture for peak ad-traffic loads." },
       { icon: BarChart3, text: "Implemented server-side tracking for 100% accurate ROAS measurement." },
       { icon: Wrench, text: "Created a simplified CMS interface for non-technical sales teams." },
+    ]
+  }
+];
+
+export const ecommerceProjects: Project[] = [
+  {
+    slug: "ozcut-welding-tables",
+    title: "Ozcut Welding Tables",
+    description: "Australian e-commerce platform for welding tables with real-time shipping and card payments.",
+    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Technical SEO", "Stripe/PayPal"],
+    link: "https://ozcutweldingtables.com.au/",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fozcutweldingtables.com.au?w=600&h=400",
+    position: "Lead Full Stack Developer",
+    duration: "2025 - Present",
+    summary: "I rebuilt Ozcut Welding Tables from an Elementor-based storefront into a fully custom-coded WooCommerce theme, stripping out page-builder overhead in favor of hand-written templates. The site now runs on fewer than 10 plugins while handling real-time Australian shipping calculations and card payments at checkout.",
+    wins: [
+      { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme, cutting the plugin count to under 10." },
+      { icon: Rocket, text: "Maintained high Lighthouse performance scores despite the added checkout and shipping logic." },
+      { icon: Truck, text: "Implemented real-time, Australia-wide shipping rate calculations at checkout." },
+      { icon: Bot, text: "Site is being surfaced by AI chat assistants (e.g. ChatGPT, Gemini) as a recommendation for welding table searches in Australia." },
+    ]
+  },
+  {
+    slug: "the-full-grip",
+    title: "The Full Grip",
+    description: "Multi-region e-commerce platform (AU & Canada) with real-time shipping and card payments.",
+    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Technical SEO"],
+    link: "https://thefullgrip.com/",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fthefullgrip.com?w=600&h=400",
+    position: "Lead Full Stack Developer",
+    duration: "2025 - Present",
+    summary: "The Full Grip (TFG) runs as a multi-site WooCommerce platform serving Australia and Canada independently. I migrated it from an Elementor build to a fully custom-coded theme with under 10 plugins, wiring up real-time shipping calculations and card payment options for each region while keeping performance scores high.",
+    wins: [
+      { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme across all sites, cutting the plugin count to under 10." },
+      { icon: Rocket, text: "Kept Lighthouse performance high across every regional site despite the custom rebuild." },
+      { icon: Truck, text: "Real-time shipping calculations tuned separately for Australian and Canadian storefronts." },
+      { icon: CreditCard, text: "Localized card payment options configured per region." },
+      { icon: Bot, text: "Products are being recommended by AI chat assistants when users ask about related gear in AU and Canada." },
+    ]
+  },
+  {
+    slug: "tenaxis-tables",
+    title: "Tenaxis Tables",
+    description: "Global multi-site e-commerce and quotation platform with sub-sites for Canada, NZ, and the UK.",
+    tech: ["WordPress", "WooCommerce", "PHP", "Multisite", "Custom Quoting System", "Technical SEO"],
+    link: "https://tenaxistables.com/",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftenaxistables.com?w=600&h=400",
+    position: "Lead Full Stack Developer",
+    duration: "2025 - Present",
+    summary: "Tenaxis Tables is built as a global-first WooCommerce multi-site, with dedicated sub-sites for Canada, New Zealand, and the United Kingdom on top of worldwide reach. I built a custom quotation and shipping system to handle pricing across regions where flat-rate shipping isn't viable, since orders can ship almost anywhere.",
+    wins: [
+      { icon: Globe, text: "Architected a multi-site structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach." },
+      { icon: BarChart3, text: "Custom quotation system is generating daily quote requests despite the site being newly released." },
+      { icon: Truck, text: "Built worldwide shipping and quoting logic to handle destinations outside standard flat-rate zones." },
+      { icon: Bot, text: "Already being surfaced by AI chat assistants as a recommendation for related product searches in AU and similar markets." },
     ]
   }
 ];

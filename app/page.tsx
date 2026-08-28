@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import { projects, archivedProjects, skills, Project } from './project/project-data';
+import { leadGenProjects, ecommerceProjects, archivedProjects, skills, Project } from './project/project-data';
 import { ArrowUpRight, Eye } from 'lucide-react';
 
 function SectionHeading({ index, title }: { index: string; title: string }) {
@@ -18,17 +18,26 @@ function SectionHeading({ index, title }: { index: string; title: string }) {
 export default function PortfolioPage() {
   return (
     <>
-      <section id="projects">
-        <SectionHeading index="01" title="Featured Projects" />
+      <section id="lead-gen-projects">
+        <SectionHeading index="01" title="Lead Generation Websites" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {projects.map((project) => (
+          {leadGenProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </section>
+
+      <section id="ecommerce-projects" className="mt-20 pt-16 border-t border-line">
+        <SectionHeading index="02" title="E-Commerce Websites" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {ecommerceProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </section>
 
       <section id="other-projects" className="mt-20 pt-16 border-t border-line">
-        <SectionHeading index="02" title="Other Noteworthy Projects" />
+        <SectionHeading index="03" title="Other Noteworthy Projects" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {archivedProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
@@ -37,7 +46,7 @@ export default function PortfolioPage() {
       </section>
 
       <section id="skills" className="mt-20 pt-16 border-t border-line">
-        <SectionHeading index="03" title="Core Technical Skills" />
+        <SectionHeading index="04" title="Core Technical Skills" />
         <div className="flex flex-wrap gap-2">
           {skills.map((skill, index) => (
             <span
