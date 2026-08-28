@@ -121,7 +121,7 @@ export const ecommerceProjects: Project[] = [
     link: "https://ozcutweldingtables.com.au/",
     image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fozcutweldingtables.com.au?w=600&h=400",
     position: "Lead Full Stack Developer",
-    duration: "2025 - Present",
+    duration: "January 2026 - Present",
     summary: "I rebuilt Ozcut Welding Tables from an Elementor-based storefront into a fully custom-coded WooCommerce theme, stripping out page-builder overhead in favor of hand-written templates. The site now runs on fewer than 10 plugins while handling real-time Australian shipping calculations and card payments at checkout.",
     wins: [
       { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme, cutting the plugin count to under 10." },
@@ -139,7 +139,7 @@ export const ecommerceProjects: Project[] = [
     link: "https://thefullgrip.com/",
     image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fthefullgrip.com?w=600&h=400",
     position: "Lead Full Stack Developer",
-    duration: "2025 - Present",
+    duration: "January 2026 - Present",
     summary: "The Full Grip (TFG) runs as a multi-site WooCommerce platform serving Australia and Canada independently. I migrated it from an Elementor build to a fully custom-coded theme with under 10 plugins, wiring up real-time shipping calculations and card payment options for each region while keeping performance scores high.",
     wins: [
       { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme across all sites, cutting the plugin count to under 10." },
@@ -158,7 +158,7 @@ export const ecommerceProjects: Project[] = [
     link: "https://tenaxistables.com/",
     image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftenaxistables.com?w=600&h=400",
     position: "Lead Full Stack Developer",
-    duration: "2025 - Present",
+    duration: "January 2026 - Present",
     summary: "Tenaxis Tables is built as a global-first WooCommerce multi-site, with dedicated sub-sites for Canada, New Zealand, and the United Kingdom on top of worldwide reach. I built a custom quotation and shipping system to handle pricing across regions where flat-rate shipping isn't viable, since orders can ship almost anywhere.",
     wins: [
       { icon: Globe, text: "Architected a multi-site structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach." },
