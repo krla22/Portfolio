@@ -2,6 +2,7 @@ export type TimelineProject = {
   name: string;
   duration: string;
   current?: boolean;
+  maintaining?: boolean;
   description: string;
   highlights?: string[];
 };
@@ -100,7 +101,7 @@ export const timelineData: TimelineEntry[] = [
     duration: "January 2026 - Present",
     current: true,
     description:
-      "Lead developer for Nexus Trade Group's e-commerce portfolio, rebuilding WooCommerce storefronts from page-builder sites into fully custom-coded themes for the Australian, Canadian, New Zealand, and UK markets.",
+      "Lead developer for Nexus Trade Group's e-commerce portfolio, rebuilding WooCommerce storefronts from page-builder sites into fully custom-coded themes for the Australian, Canadian, New Zealand, and UK markets. Continue to maintain and update every storefront post-launch.",
     highlights: [],
     projects: [
       {
@@ -112,8 +113,9 @@ export const timelineData: TimelineEntry[] = [
       {
         name: "Tenaxis Tables",
         duration: "February 2026 - April 2026",
+        maintaining: true,
         description:
-          "Built a global-first WooCommerce multi-site for Tenaxis, with dedicated sub-sites for Canada, New Zealand, and the UK alongside worldwide reach, plus a custom quotation and shipping system for orders outside flat-rate zones.",
+          "Built a global-first WooCommerce multi-site for Tenaxis, with dedicated sub-sites for Canada, New Zealand, and the UK alongside worldwide reach, plus a custom quotation and shipping system for orders outside flat-rate zones. Launched in April 2026 and still under active maintenance.",
         highlights: [
           "Architected a multi-site structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach.",
           "Built a custom quotation system that started generating daily quote requests shortly after launch.",
@@ -124,8 +126,9 @@ export const timelineData: TimelineEntry[] = [
       {
         name: "The Full Grip (rework)",
         duration: "April 2026 - June 2026",
+        maintaining: true,
         description:
-          "Reworked The Full Grip's multi-region WooCommerce platform serving Australia and Canada, migrating it off Elementor to a fully custom-coded theme while keeping performance high across every regional site.",
+          "Reworked The Full Grip's multi-region WooCommerce platform serving Australia and Canada, migrating it off Elementor to a fully custom-coded theme while keeping performance high across every regional site. Relaunched in June 2026 and still under active maintenance.",
         highlights: [
           "Migrated off Elementor to a fully custom-coded theme across all sites, cutting the plugin count to under 10.",
           "Kept Lighthouse performance high across every regional site despite the custom rebuild.",

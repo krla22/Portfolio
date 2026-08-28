@@ -136,10 +136,11 @@ function ProjectSubItem({ project }: { project: TimelineProject }) {
     <li className="relative">
       <span
         className={`absolute -left-[29px] top-1 flex items-center justify-center w-[10px] h-[10px] rounded-full border-2 bg-ink-2 ${
-          project.current ? 'border-moss' : 'border-line'
+          project.current || project.maintaining ? 'border-moss' : 'border-line'
         }`}
       >
         {project.current && <span className="absolute w-1 h-1 rounded-full bg-moss animate-pulse" />}
+        {!project.current && project.maintaining && <span className="absolute w-1 h-1 rounded-full bg-moss/60" />}
       </span>
 
       <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -149,6 +150,11 @@ function ProjectSubItem({ project }: { project: TimelineProject }) {
         {project.current && (
           <span className="font-mono text-[9px] uppercase tracking-wide text-moss border border-moss/40 px-1.5 py-0.5">
             Current
+          </span>
+        )}
+        {!project.current && project.maintaining && (
+          <span className="font-mono text-[9px] uppercase tracking-wide text-moss/70 border border-moss/25 px-1.5 py-0.5">
+            Live — Maintaining
           </span>
         )}
       </div>
