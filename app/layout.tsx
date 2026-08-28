@@ -1,10 +1,27 @@
 "use client";
 import { useState } from 'react';
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Mail, Phone, Github, Linkedin, X, Download } from 'lucide-react';
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: '--font-fraunces',
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: '--font-geist-mono',
+});
+
+const navItems = [
+  { num: '01', label: 'Projects', href: '/#projects' },
+  { num: '02', label: 'Other Work', href: '/#other-projects' },
+  { num: '03', label: 'Skills', href: '/#skills' },
+];
 
 export default function RootLayout({
   children,
@@ -19,123 +36,133 @@ export default function RootLayout({
         <title>Kurt Robin Antonio - Portfolio</title>
         <meta name="description" content="Senior Full Stack Developer & Technical SEO Lead" />
       </head>
-      
-      <body className={`${inter.variable} font-sans bg-gray-900`}>
-        
-        <div className="min-h-screen md:flex font-inter text-gray-300 max-w-[1800px] mx-auto shadow-2xl shadow-black/20">
-          
-          <aside className="md:w-1/3 lg:w-1/4 md:h-screen md:sticky md:top-0 bg-gray-800 p-8 lg:p-12 md:border-r md:border-gray-700">
+
+      <body className={`${inter.variable} ${fraunces.variable} ${geistMono.variable} font-sans bg-ink text-bone`}>
+        <div className="grain" aria-hidden="true" />
+
+        <div className="min-h-screen md:flex font-sans text-bone max-w-[1800px] mx-auto">
+
+          <aside className="md:w-1/3 lg:w-1/4 md:h-screen md:sticky md:top-0 bg-ink-2 p-8 lg:p-12 md:border-r md:border-line">
             <div className="flex flex-col justify-between h-full">
               <div>
-                <h1 className="text-3xl lg:text-4xl font-bold text-white">
-                  Kurt Robin Antonio
+                <p className="font-mono text-xs text-moss tracking-[0.2em] uppercase mb-4">
+                  Portfolio / 2026
+                </p>
+                <h1 className="font-serif text-3xl lg:text-4xl font-medium text-paper leading-tight">
+                  Kurt Robin <span className="italic text-moss">Antonio</span>
                 </h1>
-                <h2 className="text-lg font-medium text-emerald-400 mt-2 mb-6">
-                  Senior Full Stack Developer & Technical SEO Lead
+                <h2 className="font-mono text-xs text-bone/70 tracking-wide uppercase mt-3 mb-6">
+                  Senior Full Stack Developer &amp; Technical SEO Lead
                 </h2>
-                <p className="text-gray-400 mb-10 leading-relaxed">
-                  Proven success delivering high-performance, scalable websites for US clients. 
+                <p className="text-bone/70 mb-10 leading-relaxed text-sm">
+                  Proven success delivering high-performance, scalable websites for US clients.
                   I build sites that drive traffic and conversions through SEO, automation, and optimized architecture.
                 </p>
-                
-                <nav className="flex flex-col space-y-4">
-                  <a href="/#projects" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors group">
-                    <span className="inline-block w-8 h-px bg-gray-500 group-hover:bg-emerald-400 transition-colors mr-3"></span>
-                    Projects
-                  </a>
-                  <a href="/#other-projects" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors group">
-                    <span className="inline-block w-8 h-px bg-gray-500 group-hover:bg-emerald-400 transition-colors mr-3"></span>
-                    Other Projects
-                  </a>
-                  <a href="#skills" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors group">
-                    <span className="inline-block w-8 h-px bg-gray-500 group-hover:bg-emerald-400 transition-colors mr-3"></span>
-                    Skills
-                  </a>
-                  <button 
+
+                <nav className="flex flex-col space-y-1">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="group flex items-baseline gap-3 py-2 border-b border-line/60 text-bone hover:text-paper transition-colors"
+                    >
+                      <span className="font-mono text-xs text-moss/80 group-hover:text-moss transition-colors">
+                        {item.num}
+                      </span>
+                      <span className="font-medium tracking-wide text-sm">
+                        {item.label}
+                      </span>
+                    </a>
+                  ))}
+                  <button
                     onClick={() => setShowResume(true)}
-                    className="text-left text-gray-300 hover:text-emerald-400 font-medium transition-colors group"
+                    className="group flex items-baseline gap-3 py-2 border-b border-line/60 text-bone hover:text-paper transition-colors text-left"
                   >
-                    <span className="inline-block w-8 h-px bg-gray-500 group-hover:bg-emerald-400 transition-colors mr-3"></span>
-                    View Resume
+                    <span className="font-mono text-xs text-moss/80 group-hover:text-moss transition-colors">
+                      04
+                    </span>
+                    <span className="font-medium tracking-wide text-sm">
+                      View Resume
+                    </span>
                   </button>
                 </nav>
               </div>
 
               <div>
                 <div className="flex items-center space-x-5 mt-10">
-                  <a 
+                  <a
                     href="https://github.com/krla22"
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-bone/60 hover:text-moss transition-colors"
                     aria-label="GitHub"
                   >
-                    <Github size={24} />
+                    <Github size={20} />
                   </a>
-                  <a 
+                  <a
                     href="https://www.linkedin.com/in/kurtrobinantonio/"
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-bone/60 hover:text-moss transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin size={24} />
+                    <Linkedin size={20} />
                   </a>
-                  <a 
+                  <a
                     href="mailto:antoniokurtrobin.work@gmail.com"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    className="text-bone/60 hover:text-moss transition-colors"
                     aria-label="Email"
                   >
-                    <Mail size={24} />
+                    <Mail size={20} />
                   </a>
-                  <a 
+                  <a
                     href="tel:+639994238370"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    className="text-bone/60 hover:text-moss transition-colors"
                     aria-label="Phone"
                   >
-                    <Phone size={24} />
+                    <Phone size={20} />
                   </a>
                 </div>
               </div>
             </div>
           </aside>
 
-          <main className="md:w-2/3 lg:w-3/4 p-8 lg:p-12 overflow-y-auto bg-gray-900">
+          <main className="md:w-2/3 lg:w-3/4 p-8 lg:p-12 overflow-y-auto bg-ink">
             {children}
           </main>
 
           {showResume && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-              <div className="bg-gray-800 rounded-lg shadow-2xl w-11/12 h-5/6 flex flex-col border border-gray-700">
-                <div className="flex justify-between items-center p-4 border-b border-gray-700">
-                  <h3 className="text-lg font-bold text-white">Kurt Robin Antonio - Resume</h3>
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 backdrop-blur-sm">
+              <div className="bg-ink-2 shadow-2xl w-11/12 h-5/6 flex flex-col border border-line">
+                <div className="flex justify-between items-center p-4 border-b border-line">
+                  <h3 className="font-mono text-xs uppercase tracking-wide text-paper">Kurt Robin Antonio — Resume</h3>
                   <div className="flex items-center space-x-4">
-                    <a 
+                    <a
                       href="/AntonioKurtRobin_Resume.pdf"
                       download="AntonioKurtRobin_Resume.pdf"
-                      className="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md transition-colors font-medium text-sm"
+                      className="inline-flex items-center space-x-2 border border-moss text-moss hover:bg-moss hover:text-ink px-4 py-2 transition-colors font-mono text-xs uppercase tracking-wide"
                     >
-                      <Download size={16} />
+                      <Download size={14} />
                       <span>Download</span>
                     </a>
-                    <button 
+                    <button
                       onClick={() => setShowResume(false)}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-bone/60 hover:text-paper transition-colors"
                       aria-label="Close resume viewer"
                     >
-                      <X size={24} />
+                      <X size={22} />
                     </button>
                   </div>
                 </div>
-                <div className="flex-1 p-2 bg-gray-900">
-                  <iframe 
-                    src="/AntonioKurtRobin_Resume.pdf" 
+                <div className="flex-1 p-2 bg-ink">
+                  <iframe
+                    src="/AntonioKurtRobin_Resume.pdf"
                     title="Kurt Robin Antonio - Resume"
                     className="w-full h-full"
                   >
-                    <p className="text-white text-center p-8">
+                    <p className="text-paper text-center p-8">
                       Your browser does not support embedded PDFs. Please use the
-                      <a href="/AntonioKurtRobin_Resume.pdf" download="AntonioKurtRobin_Resume.pdf" className="text-emerald-400 hover:underline">
+                      <a href="/AntonioKurtRobin_Resume.pdf" download="AntonioKurtRobin_Resume.pdf" className="text-moss hover:underline">
                         Download
                       </a>
                       button to view the file.

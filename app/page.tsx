@@ -3,40 +3,46 @@ import Link from 'next/link';
 import { projects, archivedProjects, skills, Project } from './project/project-data';
 import { ArrowUpRight, Eye } from 'lucide-react';
 
+function SectionHeading({ index, title }: { index: string; title: string }) {
+  return (
+    <div className="flex items-baseline gap-4 mb-10">
+      <span className="font-mono text-xs text-moss tracking-[0.2em]">{index}</span>
+      <h2 className="font-serif text-2xl lg:text-3xl font-medium text-paper">
+        {title}
+      </h2>
+      <span className="flex-1 h-px bg-line ml-2" />
+    </div>
+  );
+}
+
 export default function PortfolioPage() {
   return (
     <>
       <section id="projects">
-        <h2 className="text-3xl font-bold text-white mb-8">
-          Featured Projects
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <SectionHeading index="01" title="Featured Projects" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </section>
 
-      <section id="other-projects" className="mt-16 pt-12 border-t border-gray-700">
-        <h2 className="text-3xl font-bold text-white mb-8">
-          Other Noteworthy Projects
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section id="other-projects" className="mt-20 pt-16 border-t border-line">
+        <SectionHeading index="02" title="Other Noteworthy Projects" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {archivedProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </section>
 
-      <section id="skills" className="mt-16 pt-12 border-t border-gray-700">
-        <h2 className="text-3xl font-bold text-white mb-8">
-          Core Technical Skills
-        </h2>
-        <div className="flex flex-wrap gap-3">
+      <section id="skills" className="mt-20 pt-16 border-t border-line">
+        <SectionHeading index="03" title="Core Technical Skills" />
+        <div className="flex flex-wrap gap-2">
           {skills.map((skill, index) => (
-            <span 
-              key={index} 
-              className="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium"
+            <span
+              key={index}
+              className="font-mono text-xs uppercase tracking-wide text-bone border border-line px-3 py-2 hover:border-moss hover:text-moss transition-colors"
             >
               {skill}
             </span>
@@ -44,9 +50,9 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <footer className="mt-16 pt-12 border-t border-gray-700">
-        <p className="text-center text-gray-500">
-          &copy; {new Date().getFullYear()} Kurt Robin Antonio. All rights reserved.
+      <footer className="mt-20 pt-10 border-t border-line">
+        <p className="text-center font-mono text-xs text-bone/40 tracking-wide">
+          &copy; {new Date().getFullYear()} Kurt Robin Antonio — Built with Next.js
         </p>
       </footer>
     </>
@@ -54,69 +60,55 @@ export default function PortfolioPage() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const fallbackImage = 'https://placehold.co/600x400/1e293b/94a3b8?text=Image+Not+Available';
-  
-  const getBadgeColor = (client: string) => {
-    switch (client) {
-      case 'NuroSparX Client':
-        return 'bg-amber-300 text-amber-800';
-      case 'NuVision Sister Company':
-        return 'bg-sky-300 text-sky-800';
-      default:
-        return 'bg-gray-300 text-gray-800';
-    }
-  };
+  const fallbackImage = 'https://placehold.co/600x400/12140F/A6A395?text=Image+Not+Available';
 
   return (
-    <div className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden transition-all hover:border-emerald-600/50 hover:shadow-lg flex flex-col">
-      <div className="relative">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-64 object-cover" 
+    <div className="group border border-line bg-ink-2 flex flex-col transition-colors hover:border-moss/60">
+      <div className="relative overflow-hidden border-b border-line">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
           onError={(e) => { (e.target as HTMLImageElement).src = fallbackImage; }}
         />
         {project.client && (
-          <span className={`absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full shadow-md ${getBadgeColor(project.client)}`}>
+          <span className="absolute top-3 left-3 bg-ink/90 text-moss font-mono text-[10px] uppercase tracking-wide px-2 py-1 border border-moss/40">
             {project.client}
           </span>
         )}
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-        
-        <p className="text-sm font-medium text-emerald-400 mt-1 mb-3">{project.position}</p>
-        
-        <p className="text-gray-400 mb-6 leading-relaxed flex-grow">{project.description}</p>
-        
-        <div className="flex flex-wrap gap-2 mb-6">
+        <h3 className="font-serif text-2xl font-medium text-paper">{project.title}</h3>
+
+        <p className="font-mono text-xs text-moss uppercase tracking-wide mt-2 mb-3">{project.position}</p>
+
+        <p className="text-bone/70 mb-6 leading-relaxed flex-grow text-sm">{project.description}</p>
+
+        <div className="flex flex-wrap gap-x-3 gap-y-1 mb-6 font-mono text-[11px] text-bone/50 uppercase tracking-wide">
           {project.tech.map((tech: string, index: number) => (
-            <span 
-              key={index} 
-              className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-xs font-medium"
-            >
+            <span key={index} className="after:content-['/'] after:ml-3 last:after:content-none">
               {tech}
             </span>
           ))}
         </div>
-        
+
         <div className="grid grid-cols-2 gap-3 mt-auto">
           <Link
             href={`/project/${project.slug}`}
-            className="inline-flex items-center justify-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white px-5 py-3 rounded-md transition-colors font-medium"
+            className="inline-flex items-center justify-center space-x-2 border border-line hover:border-moss text-bone hover:text-moss px-5 py-3 transition-colors font-mono text-xs uppercase tracking-wide"
           >
-            <Eye size={18} />
+            <Eye size={16} />
             <span>Learn More</span>
           </Link>
-          <a 
+          <a
             href={project.link}
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-md transition-colors font-medium ${project.link === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`inline-flex items-center justify-center space-x-2 bg-paper text-ink hover:bg-moss px-5 py-3 transition-colors font-mono text-xs uppercase tracking-wide ${project.link === '#' ? 'opacity-40 cursor-not-allowed hover:bg-paper' : ''}`}
             onClick={(e) => project.link === '#' && e.preventDefault()}
           >
             <span>{project.link === '#' ? 'Link (Private)' : 'View Site'}</span>
-            {project.link !== '#' && <ArrowUpRight size={18} />}
+            {project.link !== '#' && <ArrowUpRight size={16} />}
           </a>
         </div>
       </div>

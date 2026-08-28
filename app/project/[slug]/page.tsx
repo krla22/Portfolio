@@ -8,7 +8,7 @@ import { ArrowUpRight, ChevronLeft } from 'lucide-react';
 export default function ProjectDetailPage() {
   const [project, setProject] = useState<Project | null>(null);
   const params = useParams();
-  
+
   useEffect(() => {
     if (params.slug) {
       const allProjects = [...projects, ...archivedProjects];
@@ -22,30 +22,30 @@ export default function ProjectDetailPage() {
   }, [params.slug]);
 
   if (!project) {
-    return <div className="text-white">Loading...</div>;
+    return <div className="text-paper font-mono text-xs uppercase tracking-wide">Loading...</div>;
   }
-  
-  const fallbackImage = 'https://placehold.co/1200x600/1e293b/94a3b8?text=Image+Not+Available';
+
+  const fallbackImage = 'https://placehold.co/1200x600/12140F/A6A395?text=Image+Not+Available';
 
   return (
-    <div className="text-white">
-      <div className="mb-8">
-        <Link href="/" className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors group">
-          <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+    <div className="text-paper">
+      <div className="mb-10">
+        <Link href="/" className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-moss hover:text-moss-bright transition-colors group">
+          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           <span>Back to all projects</span>
         </Link>
       </div>
 
       <div className="flex-1 flex flex-col overflow-hidden">
-        
+
         <div className="flex-1 overflow-y-auto">
           <ProjectDetailContent project={project} />
 
           {project.lighthouseImage && (
-            <div className="mt-12">
-              <h4 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">Performance Report</h4>
-              <div className="mt-4 relative bg-gray-800 rounded-lg border border-gray-700 overflow-hidden shadow-lg">
-                <img 
+            <div className="mt-14">
+              <h4 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">Performance Report</h4>
+              <div className="mt-4 relative bg-ink-2 border border-line overflow-hidden">
+                <img
                   src={project.lighthouseImage}
                   alt={`${project.title} Lighthouse Report`}
                   className="w-full h-auto"
@@ -55,16 +55,16 @@ export default function ProjectDetailPage() {
             </div>
           )}
 
-          <div className="py-8 mt-8 border-t border-gray-700">
-            <a 
+          <div className="py-8 mt-10 border-t border-line">
+            <a
               href={project.link}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center justify-center w-full md:w-auto space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-md transition-colors font-medium ${project.link === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`inline-flex items-center justify-center w-full md:w-auto space-x-2 bg-paper text-ink hover:bg-moss px-6 py-3 transition-colors font-mono text-xs uppercase tracking-wide ${project.link === '#' ? 'opacity-40 cursor-not-allowed hover:bg-paper' : ''}`}
               onClick={(e) => project.link === '#' && e.preventDefault()}
             >
               <span>{project.link === '#' ? 'Link (Private)' : 'View Live Site'}</span>
-              {project.link !== '#' && <ArrowUpRight size={18} />}
+              {project.link !== '#' && <ArrowUpRight size={16} />}
             </a>
           </div>
         </div>
@@ -76,38 +76,38 @@ export default function ProjectDetailPage() {
 
 function ProjectDetailContent({ project }: { project: Project }) {
   return (
-    <div className="space-y-8">
-      <h1 className="text-4xl lg:text-5xl font-bold text-white">{project.title}</h1>
+    <div className="space-y-10">
+      <h1 className="font-serif text-4xl lg:text-5xl font-medium text-paper">{project.title}</h1>
       <div>
-        <h4 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">Role & Duration</h4>
-        <p className="text-lg text-white mt-1">{project.position}</p>
-        <p className="text-md text-gray-400">{project.duration}</p>
+        <h4 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">Role &amp; Duration</h4>
+        <p className="text-lg text-paper mt-2">{project.position}</p>
+        <p className="text-sm text-bone/60 font-mono">{project.duration}</p>
       </div>
 
       <div>
-        <h4 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">About This Project</h4>
-        <p className="text-white mt-2 leading-relaxed max-w-3xl">{project.summary}</p>
+        <h4 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">About This Project</h4>
+        <p className="text-bone/80 mt-3 leading-relaxed max-w-3xl">{project.summary}</p>
       </div>
 
       <div>
-        <h4 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">Key Wins</h4>
-        <ul className="space-y-3 mt-3">
+        <h4 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">Key Wins</h4>
+        <ul className="space-y-4 mt-4">
           {project.wins.map((win, index) => (
             <li key={index} className="flex items-start space-x-3">
-              <win.icon className="flex-shrink-0 w-5 h-5 text-emerald-400 mt-1" />
-              <span className="text-white text-lg">{win.text}</span>
+              <win.icon className="flex-shrink-0 w-5 h-5 text-moss mt-1" />
+              <span className="text-paper text-lg leading-snug">{win.text}</span>
             </li>
           ))}
         </ul>
       </div>
 
       <div>
-        <h4 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">Tech Stack & Tools</h4>
-        <div className="flex flex-wrap gap-2 mt-3">
+        <h4 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">Tech Stack &amp; Tools</h4>
+        <div className="flex flex-wrap gap-2 mt-4">
           {project.tech.map((tech: string, index: number) => (
-            <span 
-              key={index} 
-              className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-xs font-medium"
+            <span
+              key={index}
+              className="font-mono text-xs uppercase tracking-wide text-bone border border-line px-3 py-2 hover:border-moss hover:text-moss transition-colors"
             >
               {tech}
             </span>
