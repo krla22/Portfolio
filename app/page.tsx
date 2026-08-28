@@ -68,7 +68,7 @@ function ProjectCard({ project }: { project: Project }) {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
+          className="w-full h-64 object-cover"
           onError={(e) => { (e.target as HTMLImageElement).src = fallbackImage; }}
         />
         {project.client && (
