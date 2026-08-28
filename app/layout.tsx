@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Kurt Robin Antonio - Portfolio</title>
-        <meta name="description" content="Senior Full Stack Developer & Technical SEO Lead" />
+        <meta name="description" content="Full Stack Developer & Technical SEO Strategist" />
       </head>
 
       <body className={`${inter.variable} ${fraunces.variable} ${geistMono.variable} font-sans bg-ink text-bone`}>
@@ -50,14 +50,16 @@ export default function RootLayout({
                   Portfolio / 2026
                 </p>
                 <h1 className="font-serif text-3xl lg:text-4xl font-medium text-paper leading-tight">
-                  Kurt Robin <span className="italic text-moss">Antonio</span>
+                  Kurt Robin <span className="italic">Antonio</span>
                 </h1>
-                <h2 className="font-mono text-xs text-bone/70 tracking-wide uppercase mt-3 mb-6">
-                  Senior Full Stack Developer &amp; Technical SEO Lead
+                <h2 className="font-mono text-xs text-moss tracking-wide uppercase mt-3 mb-6">
+                  Full Stack Developer &amp; Technical SEO Strategist
                 </h2>
                 <p className="text-bone/70 mb-10 leading-relaxed text-sm">
-                  Proven success delivering high-performance, scalable websites for US clients.
-                  I build sites that drive traffic and conversions through SEO, automation, and optimized architecture.
+                  I build the full stack behind high-performing websites with custom WordPress plugins,
+                  deep ACF Pro architecture, technical SEO, and custom AI automation pipelines that turn
+                  web traffic into leads and sales. My work spans lead-gen platforms for US clients and
+                  e-commerce builds for AU clients with both surfacing directly in AI search results.
                 </p>
 
                 <nav className="flex flex-col space-y-1">
