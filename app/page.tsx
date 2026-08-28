@@ -18,19 +18,19 @@ function SectionHeading({ index, title }: { index: string; title: string }) {
 export default function PortfolioPage() {
   return (
     <>
-      <section id="lead-gen-projects">
-        <SectionHeading index="01" title="Lead Generation Websites" />
+      <section id="ecommerce-projects">
+        <SectionHeading index="01" title="E-Commerce Websites" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {leadGenProjects.map((project) => (
+          {ecommerceProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </section>
 
-      <section id="ecommerce-projects" className="mt-20 pt-16 border-t border-line">
-        <SectionHeading index="02" title="E-Commerce Websites" />
+      <section id="lead-gen-projects" className="mt-20 pt-16 border-t border-line">
+        <SectionHeading index="02" title="Lead Generation Websites" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {ecommerceProjects.map((project) => (
+          {leadGenProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>

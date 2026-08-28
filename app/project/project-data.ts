@@ -117,7 +117,7 @@ export const ecommerceProjects: Project[] = [
     slug: "ozcut-welding-tables",
     title: "Ozcut Welding Tables",
     description: "Australian e-commerce platform for welding tables with real-time shipping and card payments.",
-    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Technical SEO", "Stripe/PayPal"],
+    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Technical SEO", "CyberSource", "Cloudflare"],
     link: "https://ozcutweldingtables.com.au/",
     image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fozcutweldingtables.com.au?w=600&h=400",
     position: "Lead Full Stack Developer",
@@ -127,6 +127,7 @@ export const ecommerceProjects: Project[] = [
       { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme, cutting the plugin count to under 10." },
       { icon: Rocket, text: "Maintained high Lighthouse performance scores despite the added checkout and shipping logic." },
       { icon: Truck, text: "Implemented real-time, Australia-wide shipping rate calculations at checkout." },
+      { icon: Shield, text: "Secured checkout with Cloudflare Turnstile and locked down the domain with custom Cloudflare firewall rules and DNS records (SPF/DKIM)." },
       { icon: Bot, text: "Site is being surfaced by AI chat assistants (e.g. ChatGPT, Gemini) as a recommendation for welding table searches in Australia." },
     ]
   },
@@ -134,7 +135,7 @@ export const ecommerceProjects: Project[] = [
     slug: "the-full-grip",
     title: "The Full Grip",
     description: "Multi-region e-commerce platform (AU & Canada) with real-time shipping and card payments.",
-    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Technical SEO"],
+    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Technical SEO", "Cloudflare"],
     link: "https://thefullgrip.com/",
     image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fthefullgrip.com?w=600&h=400",
     position: "Lead Full Stack Developer",
@@ -145,6 +146,7 @@ export const ecommerceProjects: Project[] = [
       { icon: Rocket, text: "Kept Lighthouse performance high across every regional site despite the custom rebuild." },
       { icon: Truck, text: "Real-time shipping calculations tuned separately for Australian and Canadian storefronts." },
       { icon: CreditCard, text: "Localized card payment options configured per region." },
+      { icon: Shield, text: "Secured every regional checkout with Cloudflare Turnstile and hardened each domain with custom Cloudflare rules and DNS records (SPF/DKIM)." },
       { icon: Bot, text: "Products are being recommended by AI chat assistants when users ask about related gear in AU and Canada." },
     ]
   },
@@ -152,7 +154,7 @@ export const ecommerceProjects: Project[] = [
     slug: "tenaxis-tables",
     title: "Tenaxis Tables",
     description: "Global multi-site e-commerce and quotation platform with sub-sites for Canada, NZ, and the UK.",
-    tech: ["WordPress", "WooCommerce", "PHP", "Multisite", "Custom Quoting System", "Technical SEO"],
+    tech: ["WordPress", "WooCommerce", "PHP", "Multisite", "Custom Quoting System", "Technical SEO", "Cloudflare"],
     link: "https://tenaxistables.com/",
     image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftenaxistables.com?w=600&h=400",
     position: "Lead Full Stack Developer",
@@ -162,6 +164,7 @@ export const ecommerceProjects: Project[] = [
       { icon: Globe, text: "Architected a multi-site structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach." },
       { icon: BarChart3, text: "Custom quotation system is generating daily quote requests despite the site being newly released." },
       { icon: Truck, text: "Built worldwide shipping and quoting logic to handle destinations outside standard flat-rate zones." },
+      { icon: Shield, text: "Hardened every sub-site's domain with custom Cloudflare rules and managed DNS records (SPF/DKIM) for security and reliable email delivery." },
       { icon: Bot, text: "Already being surfaced by AI chat assistants as a recommendation for related product searches in AU and similar markets." },
     ]
   }
@@ -226,5 +229,7 @@ export const skills = [
   // Backend & CMS
   "WordPress (Headless/Custom)", "ACF Pro", "MySQL", "REST API", "GraphQL",
   // Ops & Analytics
-  "GA4", "GTM", "HubSpot", "n8n", "Zapier", "Kinsta", "Cloudflare", "Docker"
+  "GA4", "GTM", "HubSpot", "n8n", "Zapier", "Kinsta", "Cloudflare", "Docker",
+  // Domain & Security
+  "DNS Management (SPF/DKIM)", "Cloudflare Turnstile", "Custom Plugin Development"
 ];
