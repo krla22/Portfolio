@@ -61,8 +61,7 @@ export const timelineData: TimelineEntry[] = [
   {
     company: "NuVision Auto Glass",
     role: "Full Stack Web Developer | Lead Growth Engineer",
-    duration: "April 2025 - Present",
-    current: true,
+    duration: "April 2025 - December 2025",
     description:
       "Lead developer overseeing the multi-state digital presence (AZ, FL, SC), responsible for the entire technical website rebuild and organic growth infrastructure.",
     highlights: [
@@ -76,15 +75,29 @@ export const timelineData: TimelineEntry[] = [
     company: "NuroSparX",
     subtitle: "Co-founded with NuVision Auto Glass's Vice Manager",
     role: "Senior Lead Web Developer & Technical SEO Lead",
-    duration: "July 2025 - Present",
-    current: true,
+    duration: "July 2025 - December 2025",
     description:
-      "Senior SEO lead and developer managing teams to deliver client-facing websites and growth platforms for US businesses. Serving as technical lead for a business servicing high-profile clients, including Integrate IQ (HubSpot Diamond Partner), United Law, and Hygeia Health.",
+      "Senior SEO lead and developer managing teams to deliver client-facing websites and growth platforms for US businesses. Served as technical lead for a business servicing high-profile clients, including Integrate IQ (HubSpot Diamond Partner), United Law, and Hygeia Health.",
     highlights: [
       "Directed technical strategy for Integrate IQ (HubSpot Diamond Partner) and United Law, managing site migrations, directory listings, and API integrations that aligned development with aggressive marketing goals.",
       "Built modular WordPress frameworks using reusable ACF Pro modules and custom Schema automation, cutting development cycles by 40% while ensuring perfect structured page data.",
       "Managed and mentored a distributed team of developers and freelancers, enforcing semantic HTML standards and rigorous QA processes that reduced technical debt and on-page SEO errors.",
       "Engineered custom Filevine API integrations for legal clients and real-time HubSpot data syncs, ensuring seamless data flow between the frontend and CRM.",
+    ],
+  },
+  {
+    company: "Independent / Freelance",
+    role: "Lead Full Stack Developer",
+    duration: "January 2026 - Present",
+    current: true,
+    description:
+      "Working independently as a full stack developer for international e-commerce clients, rebuilding three WooCommerce platforms (Ozcut Welding Tables, The Full Grip, Tenaxis Tables) from page-builder sites into fully custom-coded themes for the Australian, Canadian, New Zealand, and UK markets.",
+    highlights: [
+      "Migrated three storefronts off Elementor to fully custom-coded WooCommerce themes, cutting each site's plugin count to under 10 while keeping Lighthouse performance high.",
+      "Engineered real-time regional shipping and card payment flows across AU, Canada, NZ, and UK storefronts, including a custom quotation system for orders outside flat-rate shipping zones.",
+      "Architected a multi-site WooCommerce structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach.",
+      "Hardened every domain with custom Cloudflare firewall rules, DNS records (SPF/DKIM), and Cloudflare Turnstile at checkout.",
+      "Products across all three sites are already being surfaced by AI chat assistants (ChatGPT, Gemini) for relevant product searches.",
     ],
   },
 ];

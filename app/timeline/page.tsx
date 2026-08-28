@@ -88,7 +88,7 @@ function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number })
 
       <div className="group border border-line bg-ink-2 p-6 lg:p-8 transition-colors hover:border-moss/60">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="font-mono text-[11px] text-bone/50 uppercase tracking-wide">
+          <span className="font-mono text-xs text-moss/90 uppercase tracking-wide font-semibold">
             {entry.duration}
           </span>
           {entry.current && (
