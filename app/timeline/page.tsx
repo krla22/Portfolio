@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronLeft, GraduationCap } from 'lucide-react';
-import { timelineData, education, TimelineEntry } from './timeline-data';
+import { timelineData, education, TimelineEntry, TimelineProject } from './timeline-data';
 
 function SectionHeading({ index, title }: { index: string; title: string }) {
   return (
@@ -118,7 +118,55 @@ function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number })
             </li>
           ))}
         </ul>
+
+        {entry.projects && entry.projects.length > 0 && (
+          <ol className="mt-6 space-y-6 border-l border-line pl-6">
+            {entry.projects.map((project) => (
+              <ProjectSubItem key={project.name} project={project} />
+            ))}
+          </ol>
+        )}
       </div>
     </motion.li>
+  );
+}
+
+function ProjectSubItem({ project }: { project: TimelineProject }) {
+  return (
+    <li className="relative">
+      <span
+        className={`absolute -left-[29px] top-1 flex items-center justify-center w-[10px] h-[10px] rounded-full border-2 bg-ink-2 ${
+          project.current ? 'border-moss' : 'border-line'
+        }`}
+      >
+        {project.current && <span className="absolute w-1 h-1 rounded-full bg-moss animate-pulse" />}
+      </span>
+
+      <div className="flex flex-wrap items-center gap-2 mb-1">
+        <span className="font-mono text-[11px] text-moss/80 uppercase tracking-wide">
+          {project.duration}
+        </span>
+        {project.current && (
+          <span className="font-mono text-[9px] uppercase tracking-wide text-moss border border-moss/40 px-1.5 py-0.5">
+            Current
+          </span>
+        )}
+      </div>
+
+      <h4 className="font-serif text-base font-medium text-paper">{project.name}</h4>
+
+      <p className="text-bone/60 text-sm leading-relaxed mt-1">{project.description}</p>
+
+      {project.highlights && project.highlights.length > 0 && (
+        <ul className="space-y-1.5 mt-3">
+          {project.highlights.map((highlight, i) => (
+            <li key={i} className="flex items-start gap-2 text-xs text-bone/60 leading-relaxed">
+              <span className="mt-1.5 w-1 h-1 rounded-full bg-moss/50 flex-shrink-0" />
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
   );
 }

@@ -1,3 +1,11 @@
+export type TimelineProject = {
+  name: string;
+  duration: string;
+  current?: boolean;
+  description: string;
+  highlights?: string[];
+};
+
 export type TimelineEntry = {
   company: string;
   subtitle?: string;
@@ -6,6 +14,7 @@ export type TimelineEntry = {
   current?: boolean;
   description: string;
   highlights: string[];
+  projects?: TimelineProject[];
 };
 
 export const timelineData: TimelineEntry[] = [
@@ -86,18 +95,58 @@ export const timelineData: TimelineEntry[] = [
     ],
   },
   {
-    company: "Independent / Freelance",
+    company: "Nexus Trade Group Pte Ltd",
     role: "Lead Full Stack Developer",
     duration: "January 2026 - Present",
     current: true,
     description:
-      "Working independently as a full stack developer for international e-commerce clients, rebuilding three WooCommerce platforms (Ozcut Welding Tables, The Full Grip, Tenaxis Tables) from page-builder sites into fully custom-coded themes for the Australian, Canadian, New Zealand, and UK markets.",
-    highlights: [
-      "Migrated three storefronts off Elementor to fully custom-coded WooCommerce themes, cutting each site's plugin count to under 10 while keeping Lighthouse performance high.",
-      "Engineered real-time regional shipping and card payment flows across AU, Canada, NZ, and UK storefronts, including a custom quotation system for orders outside flat-rate shipping zones.",
-      "Architected a multi-site WooCommerce structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach.",
-      "Hardened every domain with custom Cloudflare firewall rules, DNS records (SPF/DKIM), and Cloudflare Turnstile at checkout.",
-      "Products across all three sites are already being surfaced by AI chat assistants (ChatGPT, Gemini) for relevant product searches.",
+      "Lead developer for Nexus Trade Group's e-commerce portfolio, rebuilding WooCommerce storefronts from page-builder sites into fully custom-coded themes for the Australian, Canadian, New Zealand, and UK markets.",
+    highlights: [],
+    projects: [
+      {
+        name: "Ozcutabrasives (pre-rebuild)",
+        duration: "January 2026",
+        description:
+          "Took over the legacy Ozcutabrasives storefront, handling initial technical groundwork ahead of the full custom rebuild that would later relaunch as Ozcut Welding Tables.",
+      },
+      {
+        name: "Tenaxis Tables",
+        duration: "February 2026 - April 2026",
+        description:
+          "Built a global-first WooCommerce multi-site for Tenaxis, with dedicated sub-sites for Canada, New Zealand, and the UK alongside worldwide reach, plus a custom quotation and shipping system for orders outside flat-rate zones.",
+        highlights: [
+          "Architected a multi-site structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach.",
+          "Built a custom quotation system that started generating daily quote requests shortly after launch.",
+          "Built worldwide shipping and quoting logic to handle destinations outside standard flat-rate zones.",
+          "Hardened every sub-site's domain with custom Cloudflare rules and managed DNS records (SPF/DKIM).",
+        ],
+      },
+      {
+        name: "The Full Grip (rework)",
+        duration: "April 2026 - June 2026",
+        description:
+          "Reworked The Full Grip's multi-region WooCommerce platform serving Australia and Canada, migrating it off Elementor to a fully custom-coded theme while keeping performance high across every regional site.",
+        highlights: [
+          "Migrated off Elementor to a fully custom-coded theme across all sites, cutting the plugin count to under 10.",
+          "Kept Lighthouse performance high across every regional site despite the custom rebuild.",
+          "Tuned real-time shipping calculations separately for the Australian and Canadian storefronts.",
+          "Secured every regional checkout with Cloudflare Turnstile and hardened each domain with custom Cloudflare rules and DNS records (SPF/DKIM).",
+        ],
+      },
+      {
+        name: "Ozcut Welding Tables",
+        duration: "June 2026 - Present",
+        current: true,
+        description:
+          "Rebuilt Ozcutabrasives into Ozcut Welding Tables, a fully custom-coded WooCommerce theme for the Australian market, replacing the original Elementor-based storefront.",
+        highlights: [
+          "Migrated off Elementor to a fully custom-coded theme, cutting the plugin count to under 10.",
+          "Maintained high Lighthouse performance scores despite the added checkout and shipping logic.",
+          "Implemented real-time, Australia-wide shipping rate calculations at checkout.",
+          "Secured checkout with Cloudflare Turnstile and locked down the domain with custom Cloudflare firewall rules and DNS records (SPF/DKIM).",
+          "Site is being surfaced by AI chat assistants (e.g. ChatGPT, Gemini) as a recommendation for welding table searches in Australia.",
+        ],
+      },
     ],
   },
 ];
