@@ -164,10 +164,10 @@ function ProjectSubItem({ project }: { project: TimelineProject }) {
       <p className="text-bone/60 text-sm leading-relaxed mt-1">{project.description}</p>
 
       {project.highlights && project.highlights.length > 0 && (
-        <ul className="space-y-1.5 mt-3">
+        <ul className="space-y-2.5 mt-3">
           {project.highlights.map((highlight, i) => (
-            <li key={i} className="flex items-start gap-2 text-xs text-bone/60 leading-relaxed">
-              <span className="mt-1.5 w-1 h-1 rounded-full bg-moss/50 flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 text-sm text-bone/70 leading-relaxed">
+              <span className="mt-2 w-1 h-1 rounded-full bg-moss/70 flex-shrink-0" />
               <span>{highlight}</span>
             </li>
           ))}
