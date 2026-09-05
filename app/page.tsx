@@ -1,15 +1,32 @@
-"use client";
-import Link from 'next/link';
-import { leadGenProjects, ecommerceProjects, archivedProjects, skills, Project } from './project/project-data';
-import { ArrowUpRight, Eye } from 'lucide-react';
+import type { Metadata } from 'next';
+import { leadGenProjects, ecommerceProjects, archivedProjects, skills } from './project/project-data';
+import ProjectCard from './components/project-card';
+import JsonLd from './components/json-ld';
+import { site, siteUrl } from './lib/site';
+
+export const metadata: Metadata = {
+  title: `${site.name} — ${site.role}`,
+  description: site.metaDescription,
+  alternates: { canonical: '/' },
+};
+
+const profileSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${siteUrl}/#profilepage`,
+  url: siteUrl,
+  name: `${site.name} — ${site.role}`,
+  description: site.metaDescription,
+  isPartOf: { '@id': `${siteUrl}/#website` },
+  about: { '@id': `${siteUrl}/#person` },
+  mainEntity: { '@id': `${siteUrl}/#person` },
+};
 
 function SectionHeading({ index, title }: { index: string; title: string }) {
   return (
     <div className="flex items-baseline gap-4 mb-10">
       <span className="font-mono text-xs text-moss tracking-[0.2em]">{index}</span>
-      <h2 className="font-serif text-2xl lg:text-3xl font-medium text-paper">
-        {title}
-      </h2>
+      <h2 className="font-serif text-2xl lg:text-3xl font-medium text-paper">{title}</h2>
       <span className="flex-1 h-px bg-line ml-2" />
     </div>
   );
@@ -18,11 +35,21 @@ function SectionHeading({ index, title }: { index: string; title: string }) {
 export default function PortfolioPage() {
   return (
     <>
+      <JsonLd data={profileSchema} />
+
+      <header className="mb-16 lg:mb-20">
+        <h1 className="font-serif text-3xl lg:text-5xl font-medium text-paper leading-tight max-w-3xl">
+          {site.role} building WordPress &amp; WooCommerce for{' '}
+          <span className="italic text-moss">US and Australian</span> businesses.
+        </h1>
+        <p className="mt-6 text-bone/80 leading-relaxed max-w-2xl lg:hidden">{site.bio}</p>
+      </header>
+
       <section id="ecommerce-projects">
         <SectionHeading index="01" title="E-Commerce Websites" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {ecommerceProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
@@ -31,96 +58,39 @@ export default function PortfolioPage() {
         <SectionHeading index="02" title="Lead Generation Websites" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {leadGenProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
       <section id="other-projects" className="mt-20 pt-16 border-t border-line">
-        <SectionHeading index="03" title="Other Noteworthy Projects" />
+        <SectionHeading index="03" title="Full Stack & Mobile Work" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {archivedProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
       <section id="skills" className="mt-20 pt-16 border-t border-line">
         <SectionHeading index="04" title="Core Technical Skills" />
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill, index) => (
-            <span
-              key={index}
+        <ul className="flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <li
+              key={skill}
               className="font-mono text-xs uppercase tracking-wide text-bone border border-line px-3 py-2 hover:border-moss hover:text-moss transition-colors"
             >
               {skill}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       <footer className="mt-20 pt-10 border-t border-line">
-        <p className="text-center font-mono text-xs text-bone/40 tracking-wide">
-          &copy; {new Date().getFullYear()} Kurt Robin Antonio — Built with Next.js
+        <p className="text-center font-mono text-xs text-bone/70 tracking-wide">
+          &copy; {new Date().getFullYear()} {site.name} — Built with Next.js
         </p>
       </footer>
     </>
-  );
-}
-
-function ProjectCard({ project }: { project: Project }) {
-  const fallbackImage = 'https://placehold.co/600x400/12140F/A6A395?text=Image+Not+Available';
-
-  return (
-    <div className="group border border-line bg-ink-2 flex flex-col transition-colors hover:border-moss/60">
-      <div className="relative overflow-hidden border-b border-line">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-64 object-cover"
-          onError={(e) => { (e.target as HTMLImageElement).src = fallbackImage; }}
-        />
-        {project.client && (
-          <span className="absolute top-3 left-3 bg-ink/90 text-moss font-mono text-[10px] uppercase tracking-wide px-2 py-1 border border-moss/40">
-            {project.client}
-          </span>
-        )}
-      </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="font-serif text-2xl font-medium text-paper">{project.title}</h3>
-
-        <p className="font-mono text-xs text-moss uppercase tracking-wide mt-2 mb-3">{project.position}</p>
-
-        <p className="text-bone/70 mb-6 leading-relaxed flex-grow text-sm">{project.description}</p>
-
-        <div className="flex flex-wrap gap-x-3 gap-y-1 mb-6 font-mono text-[11px] text-bone/50 uppercase tracking-wide">
-          {project.tech.map((tech: string, index: number) => (
-            <span key={index} className="after:content-['/'] after:ml-3 last:after:content-none">
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-2 gap-3 mt-auto">
-          <Link
-            href={`/project/${project.slug}`}
-            className="inline-flex items-center justify-center space-x-2 border border-line hover:border-moss text-bone hover:text-moss px-5 py-3 transition-colors font-mono text-xs uppercase tracking-wide"
-          >
-            <Eye size={16} />
-            <span>Learn More</span>
-          </Link>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center justify-center space-x-2 bg-paper text-ink hover:bg-moss px-5 py-3 transition-colors font-mono text-xs uppercase tracking-wide ${project.link === '#' ? 'opacity-40 cursor-not-allowed hover:bg-paper' : ''}`}
-            onClick={(e) => project.link === '#' && e.preventDefault()}
-          >
-            <span>{project.link === '#' ? 'Link (Private)' : 'View Site'}</span>
-            {project.link !== '#' && <ArrowUpRight size={16} />}
-          </a>
-        </div>
-      </div>
-    </div>
   );
 }

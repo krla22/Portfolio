@@ -7,7 +7,8 @@ export type Project = {
   description: string;
   tech: string[];
   link: string;
-  image: string;
+  /** Omitted for private / NDA work — the card renders a local placeholder instead. */
+  image?: string;
   lighthouseImage?: string;
   client?: string;
   position: string;
@@ -23,91 +24,92 @@ export const leadGenProjects: Project[] = [
   {
     slug: "nuvision-auto-glass",
     title: "NuVision Auto Glass",
-    description: "Enterprise-grade digital transformation for a multi-state auto glass network.",
-    tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "n8n", "Kinsta", "Cloudflare", "Zapier"],
+    description: "Multi-state rebuild and organic growth infrastructure for an auto glass network.",
+    tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "GTM", "Kinsta", "Cloudflare"],
     link: "https://nuvisionautoglass.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnuvisionautoglass.com?w=600&h=400",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnuvisionautoglass.com?w=1200&h=800",
     lighthouseImage: "/lighthouse/nv-desktop.png",
-    position: "Lead Full Stack Engineer",
-    duration: "April 2025 - Present",
-    summary: "I architected the complete digital transformation of NuVision's legacy systems. Leading the migration to a modular WordPress architecture, I focused on Core Web Vitals and Technical SEO to support aggressive expansion into Florida and South Carolina. The new infrastructure supports high-volume traffic with zero downtime.",
+    position: "Lead Web Developer",
+    duration: "April 2025 - December 2025",
+    summary: "I rebuilt NuVision's legacy WordPress site and ran organic growth for its Arizona, Florida, and South Carolina locations. The rebuild focused on Core Web Vitals and a programmatic landing page architecture that could scale with the company's multi-state expansion.",
     wins: [
-      { icon: Rocket, text: "Achieved 95+ Mobile & Desktop Lighthouse scores (up from <30)." },
-      { icon: Zap, text: "Engineered sub-second load times, reducing form abandonment by 60%." },
-      { icon: Users, text: "Scaled infrastructure to handle 30% increase in qualified leads across new markets." },
-      { icon: Wrench, text: "Orchestrated full marketing automation pipelines via n8n and Zapier." },
+      { icon: Rocket, text: "Rebuilt the legacy site: load time 7s to 1s, Lighthouse 30 to 95." },
+      { icon: Users, text: "Built programmatic City + Service landing pages for the multi-state rollout; lead volume rose roughly 30%." },
+      { icon: BarChart3, text: "Set up GA4, GTM, and custom event tracking, then reworked the lead forms based on what the funnel data showed." },
+      { icon: Zap, text: "Automated Google review pulls so live reviews rendered on the location pages." },
+      { icon: Shield, text: "Put monitoring and backup recovery in place ahead of the high-traffic ad campaigns." },
     ]
   },
   {
     slug: "nurosparx",
     title: "NuroSparX",
-    description: "Technical leadership for a high-growth digital agency and startup incubator.",
-    tech: ["WordPress", "ACF Pro", "PHP", "GTM", "GA4", "Technical SEO", "Hostinger", "Calendly"],
+    description: "Web agency I co-founded, building growth platforms for US businesses.",
+    tech: ["WordPress", "ACF Pro", "PHP", "Schema Automation", "GTM", "GA4", "HubSpot API", "Filevine API"],
     link: "https://nurosparx.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnurosparx.com?w=600&h=400",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnurosparx.com?w=1200&h=800",
     lighthouseImage: "/lighthouse/nx-desktop.png",
-    position: "Technical Lead & SEO Strategist",
-    duration: "July 2025 - Present",
-    summary: "As Co-Founder and Technical Lead, I define the engineering standards and SEO strategies for the agency. I mentor the development team, overseeing the architecture of client solutions to ensure they are technically sound, secure, and optimized for search engines from day one.",
+    position: "Co-founder & Lead Developer",
+    duration: "July 2025 - December 2025",
+    summary: "An agency I co-founded with NuVision Auto Glass's vice manager, running alongside my NuVision role. I was the technical lead for a small team of developers and freelancers building sites for US clients including Integrate IQ (a HubSpot Diamond Partner), United Law, and Hygeia Health.",
     wins: [
-      { icon: Wrench, text: "Standardized modular development frameworks, cutting delivery time by 40%." },
-      { icon: Rocket, text: "Implemented 'SEO-First' architecture, reducing average client bounce rates by 20%." },
-      { icon: Zap, text: "Deployed AI-driven workflows to automate 60% of internal reporting tasks." },
-      { icon: Shield, text: "Architected disaster recovery protocols ensuring 99.9% agency uptime." },
+      { icon: Wrench, text: "Built a modular WordPress framework on ACF Pro with automated schema output, so new client sites reused the same components instead of starting from zero." },
+      { icon: Rocket, text: "Set technical direction for Integrate IQ and United Law: site migrations, directory listings, API integrations, and Google Ads conversion tracking." },
+      { icon: Users, text: "Managed the dev team and freelancers, enforcing semantic HTML and a QA pass before shipping." },
+      { icon: Bot, text: "Automated data entry and content updates with Zapier and AI tooling for the marketing team." },
     ]
   },
   {
     slug: "united-law",
     title: "United Law",
-    description: "A high-authority legal platform engineered for local search dominance.",
-    tech: ["WordPress", "ACF Pro", "PHP", "Schema Markup", "Local SEO", "Kinsta", "HubSpot"],
+    description: "A multi-state legal platform built for local search visibility.",
+    tech: ["WordPress", "ACF Pro", "PHP", "JSON-LD Schema", "Local SEO", "Kinsta", "Filevine API"],
     link: "https://unitedlawpa.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Funitedlawpa.com?w=600&h=400",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Funitedlawpa.com?w=1200&h=800",
     client: "NuroSparX Client",
     lighthouseImage: "/lighthouse/ul-desktop.png",
-    position: "Lead Developer & SEO Specialist",
-    duration: "July 2025 - Present",
-    summary: "I engineered a custom WordPress solution for a multi-state law firm, prioritizing trust signals and Technical SEO. The project required advanced Schema markup implementation and a high-performance codebase to compete in the highly competitive legal SEM landscape of Florida and Texas.",
+    position: "Lead Developer",
+    duration: "July 2025 - December 2025",
+    summary: "A custom WordPress build for a multi-state law firm, prioritising trust signals and technical SEO. The project needed structured data done properly and a lean codebase to compete in the legal search landscape across Florida and Texas.",
     wins: [
-      { icon: Rocket, text: "Implemented advanced JSON-LD Schema for maximum local search visibility." },
-      { icon: Users, text: "Optimized conversion paths, integrating HubSpot for immediate lead capture." },
-      { icon: Wrench, text: "Delivered a component-based design system for rapid landing page deployment." },
+      { icon: Rocket, text: "Implemented JSON-LD schema across practice areas and locations for local search visibility." },
+      { icon: Wrench, text: "Built a Filevine API integration so case intake flowed straight into the firm's existing system." },
+      { icon: Users, text: "Delivered a component-based ACF Pro system for rapid landing page deployment." },
     ]
   },
   {
     slug: "integrate-iq",
     title: "Integrate IQ",
-    description: "B2B marketing engine for a HubSpot Diamond Partner.",
-    tech: ["WordPress", "ACF Pro", "PHP", "Technical SEO", "HubSpot API", "WPEngine"],
+    description: "B2B marketing site for a HubSpot Diamond Partner.",
+    tech: ["WordPress", "ACF Pro", "PHP", "Technical SEO", "HubSpot API", "GTM", "WP Engine"],
     link: "https://integrateiq.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fintegrateiq.com?w=600&h=400",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fintegrateiq.com?w=1200&h=800",
     client: "NuroSparX Client",
     lighthouseImage: "/lighthouse/iq-desktop.png",
-    position: "Senior Web Developer",
-    duration: "July 2025 - Present",
-    summary: "For this HubSpot Diamond Partner, I developed a high-performance marketing site designed to showcase complex CRM integrations. The site utilizes a headless-hybrid approach to fetch data from HubSpot while maintaining the SEO benefits of WordPress.",
+    position: "Lead Developer",
+    duration: "July 2025 - December 2025",
+    summary: "For this HubSpot Diamond Partner I handled the site migration and the technical marketing stack: a live HubSpot sync for forms and CRM records, GTM pixels for the paid campaigns, and Google Ads conversion tracking wired to the real lead events.",
     wins: [
-      { icon: Zap, text: "Seamless bi-directional data sync with HubSpot CRM via API." },
-      { icon: Wrench, text: "Custom-built ACF architecture allowing for strict brand consistency." },
-      { icon: Rocket, text: "Optimized Core Web Vitals to capture high-intent B2B organic traffic." },
+      { icon: Zap, text: "Built a live HubSpot sync connecting site forms to the CRM." },
+      { icon: BarChart3, text: "Configured GTM pixels and Google Ads conversion tracking for the paid campaigns." },
+      { icon: Wrench, text: "Custom ACF Pro architecture keeping brand consistency across the marketing pages." },
     ]
   },
   {
     slug: "the-optico",
     title: "The Optico",
-    description: "Multi-channel insurance sales platform with advanced analytics.",
-    tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "Kinsta"],
+    description: "Insurance sales platform with multi-channel ad attribution.",
+    tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "GTM", "Kinsta"],
     link: "https://theoptico.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftheoptico.com?w=600&h=400",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftheoptico.com?w=1200&h=800",
     client: "NuVision Sister Company",
     lighthouseImage: "/lighthouse/to-desktop.png",
-    position: "Lead Full Stack Developer",
-    duration: "April 2025 - Present",
-    summary: "I led the development of a scalable sales platform for the insurance sector. Leveraging the Kinsta stack, I integrated complex tracking pixels and server-side tagging (GTM) to ensure accurate attribution across diverse ad networks.",
+    position: "Lead Web Developer",
+    duration: "April 2025 - December 2025",
+    summary: "A sales platform for the insurance sector built on the Kinsta stack. The focus was attribution: getting tracking pixels and server-side tagging set up so spend across diverse ad networks could actually be measured.",
     wins: [
-      { icon: Rocket, text: "Built on high-availability Kinsta architecture for peak ad-traffic loads." },
-      { icon: BarChart3, text: "Implemented server-side tracking for 100% accurate ROAS measurement." },
-      { icon: Wrench, text: "Created a simplified CMS interface for non-technical sales teams." },
+      { icon: Rocket, text: "Built on Kinsta for reliability under peak ad-campaign traffic." },
+      { icon: BarChart3, text: "Implemented server-side tagging via GTM for consistent cross-network ad attribution." },
+      { icon: Wrench, text: "Created a simplified CMS interface for the non-technical sales team." },
     ]
   }
 ];
@@ -116,120 +118,130 @@ export const ecommerceProjects: Project[] = [
   {
     slug: "ozcut-welding-tables",
     title: "Ozcut Welding Tables",
-    description: "Australian e-commerce platform for welding tables with real-time shipping and card payments.",
-    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Technical SEO", "CyberSource", "Cloudflare"],
+    description: "Australian WooCommerce storefront with split freight routing and card payments.",
+    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "CyberSource", "TNT", "Mainfreight", "Cloudflare"],
     link: "https://ozcutweldingtables.com.au/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fozcutweldingtables.com.au?w=600&h=400",
-    position: "Lead Full Stack Developer",
-    duration: "January 2026 - Present",
-    summary: "I rebuilt Ozcut Welding Tables from an Elementor-based storefront into a fully custom-coded WooCommerce theme, stripping out page-builder overhead in favor of hand-written templates. The site now runs on fewer than 10 plugins while handling real-time Australian shipping calculations and card payments at checkout.",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fozcutweldingtables.com.au?w=1200&h=800",
+    position: "Senior WordPress Developer",
+    duration: "June 2026 - Present",
+    summary: "I rebuilt Ozcut Abrasives into Ozcut Welding Tables, replacing an Elementor storefront with a fully custom-coded WooCommerce theme built from the group designer's Figma files. I had already taken over checkout fixes and PageSpeed work on the legacy site before the rebuild started.",
     wins: [
       { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme, cutting the plugin count to under 10." },
-      { icon: Rocket, text: "Maintained high Lighthouse performance scores despite the added checkout and shipping logic." },
-      { icon: Truck, text: "Implemented real-time, Australia-wide shipping rate calculations at checkout." },
-      { icon: Shield, text: "Secured checkout with Cloudflare Turnstile and locked down the domain with custom Cloudflare firewall rules and DNS records (SPF/DKIM)." },
-      { icon: Bot, text: "Site is being surfaced by AI chat assistants (e.g. ChatGPT, Gemini) as a recommendation for welding table searches in Australia." },
+      { icon: Truck, text: "Split TNT/Mainfreight routing so welding tables ship on the heavy goods carrier while smaller items stay on standard freight." },
+      { icon: CreditCard, text: "Wired up CyberSource card payments with real-time, Australia-wide shipping rates at checkout." },
+      { icon: Shield, text: "Secured checkout with Cloudflare Turnstile and locked down the domain with custom firewall rules and DNS records (SPF/DKIM)." },
+      { icon: Bot, text: "Site is being surfaced by AI chat assistants (ChatGPT, Gemini) as a recommendation for welding table searches in Australia." },
     ]
   },
   {
     slug: "the-full-grip",
     title: "The Full Grip",
-    description: "Multi-region e-commerce platform (AU & Canada) with real-time shipping and card payments.",
-    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Technical SEO", "Cloudflare"],
+    description: "Multi-region WooCommerce multisite serving Australia and Canada.",
+    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Airwallex", "Freightcom", "Cloudflare"],
     link: "https://thefullgrip.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fthefullgrip.com?w=600&h=400",
-    position: "Lead Full Stack Developer",
-    duration: "January 2026 - Present",
-    summary: "The Full Grip (TFG) runs as a multi-site WooCommerce platform serving Australia and Canada independently. I migrated it from an Elementor build to a fully custom-coded theme with under 10 plugins, wiring up real-time shipping calculations and card payment options for each region while keeping performance scores high.",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fthefullgrip.com?w=1200&h=800",
+    position: "Senior WordPress Developer",
+    duration: "April 2026 - June 2026",
+    summary: "The Full Grip runs as a WooCommerce multisite — four sites total — serving Australia and Canada independently. I migrated it off Elementor to a fully custom-coded theme, wiring Airwallex payments and Freightcom shipping per region while keeping performance high across every storefront. Still under active maintenance.",
     wins: [
-      { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme across all sites, cutting the plugin count to under 10." },
+      { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme across all four sites, with no page builder left in the stack." },
+      { icon: Globe, text: "Multisite architecture serving Australian and Canadian storefronts independently." },
+      { icon: CreditCard, text: "Airwallex payments and Freightcom shipping configured per region." },
       { icon: Rocket, text: "Kept Lighthouse performance high across every regional site despite the custom rebuild." },
-      { icon: Truck, text: "Real-time shipping calculations tuned separately for Australian and Canadian storefronts." },
-      { icon: CreditCard, text: "Localized card payment options configured per region." },
-      { icon: Shield, text: "Secured every regional checkout with Cloudflare Turnstile and hardened each domain with custom Cloudflare rules and DNS records (SPF/DKIM)." },
-      { icon: Bot, text: "Products are being recommended by AI chat assistants when users ask about related gear in AU and Canada." },
+      { icon: Shield, text: "Secured every regional checkout with Cloudflare Turnstile and hardened each domain with custom rules and DNS records (SPF/DKIM)." },
     ]
   },
   {
     slug: "tenaxis-tables",
     title: "Tenaxis Tables",
-    description: "Global multi-site e-commerce and quotation platform with sub-sites for Canada, NZ, and the UK.",
-    tech: ["WordPress", "WooCommerce", "PHP", "Multisite", "Custom Quoting System", "Technical SEO", "Cloudflare"],
+    description: "Global WooCommerce multisite with a custom quotation system.",
+    tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "Multisite", "CyberSource", "TNT", "Cloudflare"],
     link: "https://tenaxistables.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftenaxistables.com?w=600&h=400",
-    position: "Lead Full Stack Developer",
-    duration: "January 2026 - Present",
-    summary: "Tenaxis Tables is built as a global-first WooCommerce multi-site, with dedicated sub-sites for Canada, New Zealand, and the United Kingdom on top of worldwide reach. I built a custom quotation and shipping system to handle pricing across regions where flat-rate shipping isn't viable, since orders can ship almost anywhere.",
+    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftenaxistables.com?w=1200&h=800",
+    position: "Senior WordPress Developer",
+    duration: "February 2026 - April 2026",
+    summary: "Tenaxis Tables was built from the ground up as a global-first WooCommerce multisite, with dedicated subsites for Canada, New Zealand, and the UK on top of worldwide reach. I built a custom quotation and shipping system for destinations where flat-rate shipping isn't viable — it now runs on all three of the group's brands. Still under active maintenance.",
     wins: [
-      { icon: Globe, text: "Architected a multi-site structure with dedicated sub-sites for Canada, New Zealand, and the UK alongside global reach." },
-      { icon: BarChart3, text: "Custom quotation system is generating daily quote requests despite the site being newly released." },
-      { icon: Truck, text: "Built worldwide shipping and quoting logic to handle destinations outside standard flat-rate zones." },
-      { icon: Shield, text: "Hardened every sub-site's domain with custom Cloudflare rules and managed DNS records (SPF/DKIM) for security and reliable email delivery." },
-      { icon: Bot, text: "Already being surfaced by AI chat assistants as a recommendation for related product searches in AU and similar markets." },
+      { icon: Globe, text: "Architected a multisite with dedicated subsites for Canada, New Zealand, and the UK alongside global reach." },
+      { icon: BarChart3, text: "Built a custom quotation system that started generating daily quote requests shortly after launch — now reused across all three group brands." },
+      { icon: Truck, text: "Worldwide shipping and quoting logic for destinations outside standard flat-rate zones." },
+      { icon: Shield, text: "Hardened every subsite's domain with custom Cloudflare rules and managed DNS records (SPF/DKIM) for reliable email delivery." },
     ]
   }
 ];
 
 export const archivedProjects: Project[] = [
   {
-    slug: "america-energy-partners",
-    title: "America Energy Partners",
-    description: "Rapid-deployment renewable energy platform.",
-    tech: ["WordPress", "ACF Pro", "PHP", "Technical SEO"],
+    slug: "skinabcs",
+    title: "SkinABCs Ecosystem",
+    description: "WooCommerce storefront plus a React Native companion app.",
+    tech: ["React Native", "WordPress", "WooCommerce", "PHP", "REST API", "JSON-LD Schema"],
     link: "#",
-    image: "https://placehold.co/600x400/1e293b/94a3b8?text=AEP+(Private)",
-    position: "Contract Developer",
-    duration: "Sept. 2024 - Oct. 2024",
-    summary: "Executed a rapid-turnaround development cycle for a renewable energy firm. Delivered a fully optimized, secure, and SEO-ready site in under 30 days to meet critical campaign deadlines.",
+    position: "Full Stack Developer",
+    duration: "April 2023 - May 2024",
+    summary: "I built the company's e-commerce site and a companion mobile app for orders and tracking — the whole stack, from server config and payment gateways through to the technical SEO.",
     wins: [
-      { icon: Rocket, text: "Zero-to-Launch in under 4 weeks without technical debt." },
-      { icon: Wrench, text: "Modular landing page system for A/B testing campaigns." },
-      { icon: Zap, text: "100/100 Performance Score on Google PageSpeed Insights." },
+      { icon: Zap, text: "A/B tested a one-step checkout against the default two-step; cart abandonment dropped about 15%." },
+      { icon: Rocket, text: "Automated Product and Review schema made a few hundred SKUs rich-snippet eligible." },
+      { icon: Wrench, text: "Cut frontend assets and cleaned up slow DB queries; product pages loaded under 2 seconds." },
+      { icon: Users, text: "Built a React Native app on the WooCommerce REST API so customers could track orders from their phone." },
     ]
   },
   {
-    slug: "skinabcs",
-    title: "SkinABCs Ecosystem",
-    description: "Full-stack E-commerce & React Native Mobile App.",
-    tech: ["React Native", "WordPress", "PHP", "Firebase", "REST API"],
+    slug: "america-energy-partners",
+    title: "America Energy Partners",
+    description: "Renewable energy site delivered against a tight marketing deadline.",
+    tech: ["WordPress", "Elementor Pro", "Figma", "Technical SEO"],
     link: "#",
-    image: "https://placehold.co/600x400/1e293b/94a3b8?text=SkinABCs",
-    position: "Full Stack Engineer",
-    duration: "October 2022 - April 2024",
-    summary: "Architected a cross-platform digital ecosystem. I built a React Native mobile app and a synchronous WordPress e-commerce store, unified by a custom Firebase backend for real-time inventory and order management.",
+    position: "Web Developer (Elementor)",
+    duration: "August 2024 - January 2025",
+    summary: "A WordPress build for a renewable energy company, designed in Figma and built in Elementor Pro to hit a time-sensitive campaign launch.",
     wins: [
-      { icon: Zap, text: "Real-time database synchronization via Firebase." },
-      { icon: Wrench, text: "Developed custom E-Wallet and Order Tracking systems." },
-      { icon: Rocket, text: "Single codebase strategy reduced maintenance costs by 50%." },
+      { icon: Wrench, text: "Designed the layouts in Figma and built them in Elementor Pro." },
+      { icon: Rocket, text: "Built reusable global widgets and templates so new service and landing pages stayed consistent." },
+      { icon: Zap, text: "Kept the Elementor DOM shallow and asset loading lean so the page builder didn't tank Core Web Vitals." },
     ]
   },
   {
     slug: "oikos-school-management",
     title: "Oikos School Management",
-    description: "SaaS-style school management platform.",
-    tech: ["Laravel", "PHP", "MySQL", "Bootstrap", "Python"],
+    description: "Laravel backend for a school management system.",
+    tech: ["Laravel", "PHP", "MySQL", "Python", "Bootstrap"],
     link: "#",
-    image: "https://placehold.co/600x400/1e293b/94a3b8?text=Oikos+Tech",
-    position: "Backend Developer",
-    duration: "July 2022 - December 2022",
-    summary: "Co-developed a comprehensive school management system. I focused on the Laravel backend architecture, designing efficient MySQL schemas and Python automation scripts for administrative workflows.",
+    position: "Laravel Full Stack Developer",
+    duration: "July 2021 - May 2022",
+    summary: "My first developer role. I built the backend for a school management system — the Laravel application, the relational schema behind student and faculty records, and the automation around it.",
     wins: [
-      { icon: Wrench, text: "Automated complex admin tasks with Python & Cron jobs." },
-      { icon: Zap, text: "Optimized SQL queries for fast reporting on large datasets." },
-      { icon: Rocket, text: "Built secure Role-Based Access Control (RBAC) for users." },
+      { icon: Wrench, text: "Designed the Laravel and MySQL system for student and faculty records." },
+      { icon: Zap, text: "Wrote Python scripts to batch the admin data processing staff had been doing by hand." },
+      { icon: Rocket, text: "Built RESTful routing to support complex scheduling and task management operations." },
     ]
   }
 ];
 
 export const skills = [
-  // Core & Architecture
-  "Technical SEO", "System Architecture", "React", "Next.js", "PHP", "Laravel", "React Native",
+  // WordPress
+  "Custom Themes", "Custom Plugins", "ACF Pro", "WooCommerce", "Multisite", "Elementor", "Divi",
   // Frontend
-  "JavaScript (ES6+)", "TypeScript", "Tailwind CSS", "SCSS", "HTML5", 
-  // Backend & CMS
-  "WordPress (Headless/Custom)", "ACF Pro", "MySQL", "REST API", "GraphQL",
-  // Ops & Analytics
-  "GA4", "GTM", "HubSpot", "n8n", "Zapier", "Kinsta", "Cloudflare", "Docker",
-  // Domain & Security
-  "DNS Management (SPF/DKIM)", "Cloudflare Turnstile", "Custom Plugin Development"
+  "JavaScript (ES6+)", "TypeScript", "React", "Next.js", "React Native", "Tailwind CSS", "SCSS", "Vite",
+  // Backend
+  "PHP", "Laravel", "MySQL", "REST API", "GraphQL", "Python",
+  // E-commerce
+  "CyberSource", "Airwallex", "TNT", "Mainfreight", "Freightcom",
+  // SEO & analytics
+  "Technical SEO", "Core Web Vitals", "JSON-LD Schema", "GA4", "GTM", "Search Console", "Google Ads", "Microsoft Clarity",
+  // Hosting & infra
+  "Kinsta", "WP Engine", "Cloudflare", "Google Cloud", "Docker", "DNS (SPF/DKIM)",
+  // Automation
+  "HubSpot", "Zapier", "n8n", "Local LLM Hosting", "Chatbot Integrations"
 ];
+
+export const allProjects: Project[] = [
+  ...ecommerceProjects,
+  ...leadGenProjects,
+  ...archivedProjects,
+];
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return allProjects.find((project) => project.slug === slug);
+}
