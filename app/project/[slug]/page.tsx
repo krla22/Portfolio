@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronLeft } from 'lucide-react';
 import { allProjects, getProjectBySlug } from '../project-data';
+import LighthouseReport from '../../components/lighthouse-report';
 
 type PageProps = { params: { slug: string } };
 
@@ -116,15 +117,11 @@ export default function ProjectDetailPage({ params }: PageProps) {
         {project.lighthouseImage && (
           <section>
             <Label>Performance report</Label>
-            <div className="relative mt-4 aspect-[2/1] overflow-hidden rounded-xl border border-line bg-white">
-              <Image
-                src={project.lighthouseImage}
-                alt={`Lighthouse desktop report for ${project.title}`}
-                fill
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                className="object-contain"
-              />
-            </div>
+            <LighthouseReport
+              title={project.title}
+              desktop={project.lighthouseImage}
+              mobile={project.lighthouseMobileImage}
+            />
           </section>
         )}
 
@@ -157,14 +154,27 @@ export default function ProjectDetailPage({ params }: PageProps) {
         {next && (
           <Link
             href={`/project/${next.slug}`}
-            className="group rounded-xl border border-line p-5 text-right transition-colors hover:border-royal"
+            className="group flex items-center gap-4 rounded-xl border border-line p-5 text-right transition-colors hover:border-royal"
           >
-            <span className="flex items-center justify-end gap-1 text-sm text-muted">
-              Next <ArrowRight size={14} aria-hidden="true" />
-            </span>
-            <span className="mt-1 block font-serif text-xl text-heading group-hover:text-royal">
-              {next.title}
-            </span>
+            {next.image && (
+              <div className="relative aspect-[3/2] w-28 flex-shrink-0 overflow-hidden rounded-md border border-line bg-surface">
+                <Image
+                  src={next.image}
+                  alt=""
+                  fill
+                  sizes="112px"
+                  className="object-cover object-top"
+                />
+              </div>
+            )}
+            <div className="min-w-0 flex-grow">
+              <span className="flex items-center justify-end gap-1 text-sm text-muted">
+                Next <ArrowRight size={14} aria-hidden="true" />
+              </span>
+              <span className="mt-1 block font-serif text-xl text-heading group-hover:text-royal">
+                {next.title}
+              </span>
+            </div>
           </Link>
         )}
       </nav>

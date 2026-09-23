@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={`/project/${project.slug}`}
             className="inline-flex items-center gap-2 rounded-md bg-royal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-royal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal focus-visible:ring-offset-2"
           >
-            Case study
+            View Details
             <ArrowRight size={16} aria-hidden="true" />
             <span className="sr-only">: {project.title}</span>
           </Link>

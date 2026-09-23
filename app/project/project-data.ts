@@ -10,6 +10,7 @@ export type Project = {
   /** Omitted for private / NDA work; the card renders a local placeholder instead. */
   image?: string;
   lighthouseImage?: string;
+  lighthouseMobileImage?: string;
   client?: string;
   position: string;
   duration: string;
@@ -122,8 +123,8 @@ export const ecommerceProjects: Project[] = [
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "CyberSource", "TNT", "Mainfreight", "Cloudflare"],
     link: "https://ozcutweldingtables.com.au/",
     image: "/projects/ozcutweldingtables.png",
-    // TODO: add public/lighthouse/oz-desktop.png, then uncomment:
-    // lighthouseImage: "/lighthouse/oz-desktop.png",
+    lighthouseImage: "/lighthouse/oz-desktop.png",
+    lighthouseMobileImage: "/lighthouse/oz-mobile.png",
     position: "Senior WordPress Developer",
     duration: "June 2026 - Present",
     summary: "Ozcut Abrasives was an Elementor store. I rebuilt it as Ozcut Welding Tables with a fully custom WooCommerce theme, working from our designer's Figma files. Before the rebuild I'd already been fixing checkout issues and PageSpeed on the old site, so I knew where the problems were.",
@@ -141,8 +142,8 @@ export const ecommerceProjects: Project[] = [
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Airwallex", "Freightcom", "Cloudflare"],
     link: "https://thefullgrip.com/",
     image: "/projects/thefullgrip.png",
-    // TODO: add public/lighthouse/fg-desktop.png, then uncomment:
-    // lighthouseImage: "/lighthouse/fg-desktop.png",
+    lighthouseImage: "/lighthouse/fg-desktop.png",
+    lighthouseMobileImage: "/lighthouse/fg-mobile.png",
     position: "Senior WordPress Developer",
     duration: "April 2026 - June 2026",
     summary: "The Full Grip is four WooCommerce sites in one multisite, with Australia and Canada each running on their own. I moved all of it off Elementor to a custom theme and set up Airwallex payments and Freightcom shipping for each region, without letting the speed drop. I still look after it today.",
@@ -161,8 +162,8 @@ export const ecommerceProjects: Project[] = [
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "Multisite", "CyberSource", "TNT", "Cloudflare"],
     link: "https://tenaxistables.com/",
     image: "/projects/tenaxistables.png",
-    // TODO: add public/lighthouse/tx-desktop.png, then uncomment:
-    // lighthouseImage: "/lighthouse/tx-desktop.png",
+    lighthouseImage: "/lighthouse/tx-desktop.png",
+    lighthouseMobileImage: "/lighthouse/tx-mobile.png",
     position: "Senior WordPress Developer",
     duration: "February 2026 - April 2026",
     summary: "I built Tenaxis from scratch to sell worldwide, with separate sites for Canada, New Zealand, and the UK. Flat-rate shipping doesn't work for a lot of destinations, so I built a custom quote and shipping system for those orders. It worked well enough that all three of the group's brands use it now. I still look after the site today.",
