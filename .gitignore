@@ -37,3 +37,5 @@ next-env.d.ts
 
 #continue
 .continue
+# favicon source artwork (exported to app/icon.png + app/apple-icon.png)
+/portfolio_favicon.png
