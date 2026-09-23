@@ -7,7 +7,7 @@ export type Project = {
   description: string;
   tech: string[];
   link: string;
-  /** Omitted for private / NDA work — the card renders a local placeholder instead. */
+  /** Omitted for private / NDA work; the card renders a local placeholder instead. */
   image?: string;
   lighthouseImage?: string;
   client?: string;
@@ -24,44 +24,44 @@ export const leadGenProjects: Project[] = [
   {
     slug: "nuvision-auto-glass",
     title: "NuVision Auto Glass",
-    description: "Multi-state rebuild and organic growth infrastructure for an auto glass network.",
+    description: "I rebuilt their old site and handled organic growth across three states.",
     tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "GTM", "Kinsta", "Cloudflare"],
     link: "https://nuvisionautoglass.com/",
     image: "/projects/nuvisionautoglass.png",
     lighthouseImage: "/lighthouse/nv-desktop.png",
     position: "Lead Web Developer",
     duration: "April 2025 - December 2025",
-    summary: "I rebuilt NuVision's legacy WordPress site and ran organic growth for its Arizona, Florida, and South Carolina locations. The rebuild focused on Core Web Vitals and a programmatic landing page architecture that could scale with the company's multi-state expansion.",
+    summary: "NuVision had an old, slow WordPress site and locations in Arizona, Florida, and South Carolina. I rebuilt the site with speed as the main goal, then set up landing pages that could grow with them as they opened in new states. I also looked after their organic growth the whole time I was there.",
     wins: [
-      { icon: Rocket, text: "Rebuilt the legacy site: load time 7s to 1s, Lighthouse 30 to 95." },
-      { icon: Users, text: "Built programmatic City + Service landing pages for the multi-state rollout; lead volume rose roughly 30%." },
-      { icon: BarChart3, text: "Set up GA4, GTM, and custom event tracking, then reworked the lead forms based on what the funnel data showed." },
-      { icon: Zap, text: "Automated Google review pulls so live reviews rendered on the location pages." },
-      { icon: Shield, text: "Put monitoring and backup recovery in place ahead of the high-traffic ad campaigns." },
+      { icon: Rocket, text: "Got the load time down from 7s to 1s, and the Lighthouse score up from 30 to 92." },
+      { icon: Users, text: "Built City + Service landing pages for each new state. Leads went up by about 30%." },
+      { icon: BarChart3, text: "Set up GA4, GTM, and custom event tracking, then fixed the lead forms based on where people were dropping off." },
+      { icon: Zap, text: "Pulled in Google reviews automatically so each location page showed real, up-to-date reviews." },
+      { icon: Shield, text: "Put monitoring and backups in place before the big ad campaigns went live." },
     ]
   },
   {
     slug: "nurosparx",
     title: "NuroSparX",
-    description: "Web agency I co-founded, building growth platforms for US businesses.",
+    description: "A web agency I co-founded, building sites for US businesses.",
     tech: ["WordPress", "ACF Pro", "PHP", "Schema Automation", "GTM", "GA4", "HubSpot API", "Filevine API"],
     link: "https://nurosparx.com/",
     image: "/projects/nurosparx.png",
     lighthouseImage: "/lighthouse/nx-desktop.png",
     position: "Co-founder & Lead Developer",
     duration: "July 2025 - December 2025",
-    summary: "An agency I co-founded with NuVision Auto Glass's vice manager, running alongside my NuVision role. I was the technical lead for a small team of developers and freelancers building sites for US clients including Integrate IQ (a HubSpot Diamond Partner), United Law, and Hygeia Health.",
+    summary: "I started this agency with NuVision Auto Glass's vice manager and ran it alongside my NuVision job. I was the tech lead for a small team of devs and freelancers, and we built sites for US clients like Integrate IQ (a HubSpot Diamond Partner), United Law, and Hygeia Health.",
     wins: [
-      { icon: Wrench, text: "Built a modular WordPress framework on ACF Pro with automated schema output, so new client sites reused the same components instead of starting from zero." },
-      { icon: Rocket, text: "Set technical direction for Integrate IQ and United Law: site migrations, directory listings, API integrations, and Google Ads conversion tracking." },
-      { icon: Users, text: "Managed the dev team and freelancers, enforcing semantic HTML and a QA pass before shipping." },
-      { icon: Bot, text: "Automated data entry and content updates with Zapier and AI tooling for the marketing team." },
+      { icon: Wrench, text: "Built a reusable WordPress framework on ACF Pro with schema baked in, so we never started a client site from zero." },
+      { icon: Rocket, text: "Led the technical side for Integrate IQ and United Law: migrations, directory listings, API integrations, and Google Ads conversion tracking." },
+      { icon: Users, text: "Managed the devs and freelancers, and made sure everything got a proper QA pass before it shipped." },
+      { icon: Bot, text: "Automated a lot of the marketing team's data entry and content updates with Zapier and AI tools." },
     ]
   },
   {
     slug: "united-law",
     title: "United Law",
-    description: "A multi-state legal platform built for local search visibility.",
+    description: "A law firm site built to show up in local search in Florida and Texas.",
     tech: ["WordPress", "ACF Pro", "PHP", "JSON-LD Schema", "Local SEO", "Kinsta", "Filevine API"],
     link: "https://unitedlawpa.com/",
     image: "/projects/unitedlawpa.png",
@@ -69,17 +69,17 @@ export const leadGenProjects: Project[] = [
     lighthouseImage: "/lighthouse/ul-desktop.png",
     position: "Lead Developer",
     duration: "July 2025 - December 2025",
-    summary: "A custom WordPress build for a multi-state law firm, prioritising trust signals and technical SEO. The project needed structured data done properly and a lean codebase to compete in the legal search landscape across Florida and Texas.",
+    summary: "A custom WordPress build for a law firm working in Florida and Texas. Legal search is really competitive, so the site needed to load fast, look trustworthy, and have its structured data done properly.",
     wins: [
-      { icon: Rocket, text: "Implemented JSON-LD schema across practice areas and locations for local search visibility." },
-      { icon: Wrench, text: "Built a Filevine API integration so case intake flowed straight into the firm's existing system." },
-      { icon: Users, text: "Delivered a component-based ACF Pro system for rapid landing page deployment." },
+      { icon: Rocket, text: "Added JSON-LD schema to every practice area and location page to help with local search." },
+      { icon: Wrench, text: "Hooked the intake forms up to Filevine through their API, so new cases went straight into the firm's system." },
+      { icon: Users, text: "Built a set of ACF Pro blocks so the team could put together new landing pages quickly." },
     ]
   },
   {
     slug: "integrate-iq",
     title: "Integrate IQ",
-    description: "B2B marketing site for a HubSpot Diamond Partner.",
+    description: "A B2B marketing site for a HubSpot Diamond Partner.",
     tech: ["WordPress", "ACF Pro", "PHP", "Technical SEO", "HubSpot API", "GTM", "WP Engine"],
     link: "https://integrateiq.com/",
     image: "/projects/integrateiq.png",
@@ -87,17 +87,17 @@ export const leadGenProjects: Project[] = [
     lighthouseImage: "/lighthouse/iq-desktop.png",
     position: "Lead Developer",
     duration: "July 2025 - December 2025",
-    summary: "For this HubSpot Diamond Partner I handled the site migration and the technical marketing stack: a live HubSpot sync for forms and CRM records, GTM pixels for the paid campaigns, and Google Ads conversion tracking wired to the real lead events.",
+    summary: "I moved Integrate IQ's site over and set up the marketing side: their forms sync live with HubSpot, the paid campaigns have GTM pixels, and Google Ads conversions are tied to real leads.",
     wins: [
-      { icon: Zap, text: "Built a live HubSpot sync connecting site forms to the CRM." },
-      { icon: BarChart3, text: "Configured GTM pixels and Google Ads conversion tracking for the paid campaigns." },
-      { icon: Wrench, text: "Custom ACF Pro architecture keeping brand consistency across the marketing pages." },
+      { icon: Zap, text: "Built a live sync between the site's forms and HubSpot." },
+      { icon: BarChart3, text: "Set up GTM pixels and Google Ads conversion tracking for their paid campaigns." },
+      { icon: Wrench, text: "Built the pages on ACF Pro so the branding stays consistent no matter who edits them." },
     ]
   },
   {
     slug: "the-optico",
     title: "The Optico",
-    description: "Insurance sales platform with multi-channel ad attribution.",
+    description: "An insurance sales site where they can see which ads actually work.",
     tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "GTM", "Kinsta"],
     link: "https://theoptico.com/",
     image: "/projects/theoptico.png",
@@ -105,11 +105,11 @@ export const leadGenProjects: Project[] = [
     lighthouseImage: "/lighthouse/to-desktop.png",
     position: "Lead Web Developer",
     duration: "April 2025 - December 2025",
-    summary: "A sales platform for the insurance sector built on the Kinsta stack. The focus was attribution: getting tracking pixels and server-side tagging set up so spend across diverse ad networks could actually be measured.",
+    summary: "A sales site for an insurance business, hosted on Kinsta. The main job was tracking. They were running ads on a bunch of networks, so I set up pixels and server-side tagging so they could see which spend was actually bringing in sales.",
     wins: [
-      { icon: Rocket, text: "Built on Kinsta for reliability under peak ad-campaign traffic." },
-      { icon: BarChart3, text: "Implemented server-side tagging via GTM for consistent cross-network ad attribution." },
-      { icon: Wrench, text: "Created a simplified CMS interface for the non-technical sales team." },
+      { icon: Rocket, text: "Hosted it on Kinsta so it holds up when the ad campaigns bring in traffic spikes." },
+      { icon: BarChart3, text: "Set up server-side tagging through GTM so the ad numbers match up across every network." },
+      { icon: Wrench, text: "Made the admin simple enough for the sales team to update things themselves." },
     ]
   }
 ];
@@ -118,7 +118,7 @@ export const ecommerceProjects: Project[] = [
   {
     slug: "ozcut-welding-tables",
     title: "Ozcut Welding Tables",
-    description: "Australian WooCommerce storefront with split freight routing and card payments.",
+    description: "An Australian WooCommerce store that ships heavy tables and small parts on different carriers.",
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "CyberSource", "TNT", "Mainfreight", "Cloudflare"],
     link: "https://ozcutweldingtables.com.au/",
     image: "/projects/ozcutweldingtables.png",
@@ -126,18 +126,18 @@ export const ecommerceProjects: Project[] = [
     // lighthouseImage: "/lighthouse/oz-desktop.png",
     position: "Senior WordPress Developer",
     duration: "June 2026 - Present",
-    summary: "I rebuilt Ozcut Abrasives into Ozcut Welding Tables, replacing an Elementor storefront with a fully custom-coded WooCommerce theme built from the group designer's Figma files. I had already taken over checkout fixes and PageSpeed work on the legacy site before the rebuild started.",
+    summary: "Ozcut Abrasives was an Elementor store. I rebuilt it as Ozcut Welding Tables with a fully custom WooCommerce theme, working from our designer's Figma files. Before the rebuild I'd already been fixing checkout issues and PageSpeed on the old site, so I knew where the problems were.",
     wins: [
-      { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme, cutting the plugin count to under 10." },
-      { icon: Truck, text: "Split TNT/Mainfreight routing so welding tables ship on the heavy goods carrier while smaller items stay on standard freight." },
-      { icon: CreditCard, text: "Wired up CyberSource card payments with real-time, Australia-wide shipping rates at checkout." },
-      { icon: Shield, text: "Secured checkout with Cloudflare Turnstile and locked down the domain with custom firewall rules and DNS records (SPF/DKIM)." },
+      { icon: Wrench, text: "Got rid of Elementor and custom-coded the whole theme. The site now runs on fewer than 10 plugins." },
+      { icon: Truck, text: "Split shipping between TNT and Mainfreight, so welding tables go out on the heavy goods carrier and smaller items stay on standard freight." },
+      { icon: CreditCard, text: "Set up CyberSource card payments with live shipping rates for anywhere in Australia." },
+      { icon: Shield, text: "Added Cloudflare Turnstile to checkout, plus firewall rules and SPF/DKIM records to lock down the domain." },
     ]
   },
   {
     slug: "the-full-grip",
     title: "The Full Grip",
-    description: "Multi-region WooCommerce multisite serving Australia and Canada.",
+    description: "A WooCommerce multisite with separate stores for Australia and Canada.",
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Airwallex", "Freightcom", "Cloudflare"],
     link: "https://thefullgrip.com/",
     image: "/projects/thefullgrip.png",
@@ -145,19 +145,19 @@ export const ecommerceProjects: Project[] = [
     // lighthouseImage: "/lighthouse/fg-desktop.png",
     position: "Senior WordPress Developer",
     duration: "April 2026 - June 2026",
-    summary: "The Full Grip runs as a WooCommerce multisite — four sites total — serving Australia and Canada independently. I migrated it off Elementor to a fully custom-coded theme, wiring Airwallex payments and Freightcom shipping per region while keeping performance high across every storefront. Still under active maintenance.",
+    summary: "The Full Grip is four WooCommerce sites in one multisite, with Australia and Canada each running on their own. I moved all of it off Elementor to a custom theme and set up Airwallex payments and Freightcom shipping for each region, without letting the speed drop. I still look after it today.",
     wins: [
-      { icon: Wrench, text: "Migrated off Elementor to a fully custom-coded theme across all four sites, with no page builder left in the stack." },
-      { icon: Globe, text: "Multisite architecture serving Australian and Canadian storefronts independently." },
-      { icon: CreditCard, text: "Airwallex payments and Freightcom shipping configured per region." },
-      { icon: Rocket, text: "Kept Lighthouse performance high across every regional site despite the custom rebuild." },
-      { icon: Shield, text: "Secured every regional checkout with Cloudflare Turnstile and hardened each domain with custom rules and DNS records (SPF/DKIM)." },
+      { icon: Wrench, text: "Replaced Elementor with a custom-coded theme on all four sites. There's no page builder left." },
+      { icon: Globe, text: "Set up the multisite so the Australian and Canadian stores run separately." },
+      { icon: CreditCard, text: "Configured Airwallex payments and Freightcom shipping for each region." },
+      { icon: Rocket, text: "Kept Lighthouse scores high on every regional site after the rebuild." },
+      { icon: Shield, text: "Added Cloudflare Turnstile to every checkout, plus custom rules and SPF/DKIM records on each domain." },
     ]
   },
   {
     slug: "tenaxis-tables",
     title: "Tenaxis Tables",
-    description: "Global WooCommerce multisite with a custom quotation system.",
+    description: "A global WooCommerce multisite with its own quoting system.",
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "Multisite", "CyberSource", "TNT", "Cloudflare"],
     link: "https://tenaxistables.com/",
     image: "/projects/tenaxistables.png",
@@ -165,12 +165,12 @@ export const ecommerceProjects: Project[] = [
     // lighthouseImage: "/lighthouse/tx-desktop.png",
     position: "Senior WordPress Developer",
     duration: "February 2026 - April 2026",
-    summary: "Tenaxis Tables was built from the ground up as a global-first WooCommerce multisite, with dedicated subsites for Canada, New Zealand, and the UK on top of worldwide reach. I built a custom quotation and shipping system for destinations where flat-rate shipping isn't viable — it now runs on all three of the group's brands. Still under active maintenance.",
+    summary: "I built Tenaxis from scratch to sell worldwide, with separate sites for Canada, New Zealand, and the UK. Flat-rate shipping doesn't work for a lot of destinations, so I built a custom quote and shipping system for those orders. It worked well enough that all three of the group's brands use it now. I still look after the site today.",
     wins: [
-      { icon: Globe, text: "Architected a multisite with dedicated subsites for Canada, New Zealand, and the UK alongside global reach." },
-      { icon: BarChart3, text: "Built a custom quotation system that started generating daily quote requests shortly after launch — now reused across all three group brands." },
-      { icon: Truck, text: "Worldwide shipping and quoting logic for destinations outside standard flat-rate zones." },
-      { icon: Shield, text: "Hardened every subsite's domain with custom Cloudflare rules and managed DNS records (SPF/DKIM) for reliable email delivery." },
+      { icon: Globe, text: "Set up the multisite with its own sites for Canada, New Zealand, and the UK, plus a global store." },
+      { icon: BarChart3, text: "Built a custom quote system that was getting quote requests every day soon after launch. All three group brands use it now." },
+      { icon: Truck, text: "Wrote the shipping and quoting logic for places flat-rate shipping doesn't cover." },
+      { icon: Shield, text: "Set up Cloudflare rules and SPF/DKIM records on every site's domain so emails actually land." },
     ]
   }
 ];
@@ -179,47 +179,47 @@ export const archivedProjects: Project[] = [
   {
     slug: "skinabcs",
     title: "SkinABCs Ecosystem",
-    description: "WooCommerce storefront plus a React Native companion app.",
+    description: "A WooCommerce store plus a React Native app to go with it.",
     tech: ["React Native", "WordPress", "WooCommerce", "PHP", "REST API", "JSON-LD Schema"],
     link: "#",
     position: "Full Stack Developer",
     duration: "April 2023 - May 2024",
-    summary: "I built the company's e-commerce site and a companion mobile app for orders and tracking — the whole stack, from server config and payment gateways through to the technical SEO.",
+    summary: "I built the company's online store and a mobile app for orders and tracking. I handled all of it, from the server setup and payment gateways to the SEO.",
     wins: [
-      { icon: Zap, text: "A/B tested a one-step checkout against the default two-step; cart abandonment dropped about 15%." },
-      { icon: Rocket, text: "Automated Product and Review schema made a few hundred SKUs rich-snippet eligible." },
-      { icon: Wrench, text: "Cut frontend assets and cleaned up slow DB queries; product pages loaded under 2 seconds." },
-      { icon: Users, text: "Built a React Native app on the WooCommerce REST API so customers could track orders from their phone." },
+      { icon: Zap, text: "Tested a one-step checkout against the usual two-step one. Cart abandonment dropped by about 15%." },
+      { icon: Rocket, text: "Automated Product and Review schema so a few hundred products could show up as rich results in Google." },
+      { icon: Wrench, text: "Trimmed the frontend and fixed slow database queries, so product pages loaded in under 2 seconds." },
+      { icon: Users, text: "Built a React Native app on the WooCommerce REST API so customers could track orders on their phone." },
     ]
   },
   {
     slug: "america-energy-partners",
     title: "America Energy Partners",
-    description: "Renewable energy site delivered against a tight marketing deadline.",
+    description: "A renewable energy site built on a tight deadline.",
     tech: ["WordPress", "Elementor Pro", "Figma", "Technical SEO"],
     link: "#",
     position: "Web Developer (Elementor)",
     duration: "August 2024 - January 2025",
-    summary: "A WordPress build for a renewable energy company, designed in Figma and built in Elementor Pro to hit a time-sensitive campaign launch.",
+    summary: "A WordPress site for a renewable energy company. I designed it in Figma and built it in Elementor Pro so it'd be ready in time for a campaign launch.",
     wins: [
-      { icon: Wrench, text: "Designed the layouts in Figma and built them in Elementor Pro." },
-      { icon: Rocket, text: "Built reusable global widgets and templates so new service and landing pages stayed consistent." },
-      { icon: Zap, text: "Kept the Elementor DOM shallow and asset loading lean so the page builder didn't tank Core Web Vitals." },
+      { icon: Wrench, text: "Designed the pages in Figma, then built them in Elementor Pro." },
+      { icon: Rocket, text: "Made reusable widgets and templates so new service and landing pages all stayed consistent." },
+      { icon: Zap, text: "Kept the Elementor layouts light so the page builder didn't slow the site down." },
     ]
   },
   {
     slug: "oikos-school-management",
     title: "Oikos School Management",
-    description: "Laravel backend for a school management system.",
+    description: "The Laravel backend for a school management system.",
     tech: ["Laravel", "PHP", "MySQL", "Python", "Bootstrap"],
     link: "#",
     position: "Laravel Full Stack Developer",
     duration: "July 2021 - May 2022",
-    summary: "My first developer role. I built the backend for a school management system — the Laravel application, the relational schema behind student and faculty records, and the automation around it.",
+    summary: "This was my first dev job. I built the backend for a school management system: the Laravel app, the database for student and faculty records, and some automation to save the staff time.",
     wins: [
-      { icon: Wrench, text: "Designed the Laravel and MySQL system for student and faculty records." },
-      { icon: Zap, text: "Wrote Python scripts to batch the admin data processing staff had been doing by hand." },
-      { icon: Rocket, text: "Built RESTful routing to support complex scheduling and task management operations." },
+      { icon: Wrench, text: "Designed the Laravel app and MySQL database for student and faculty records." },
+      { icon: Zap, text: "Wrote Python scripts for admin work the staff used to do by hand." },
+      { icon: Rocket, text: "Built the REST routes behind the scheduling and task management features." },
     ]
   }
 ];

@@ -5,7 +5,7 @@ import { site } from './lib/site';
 // (fileURLToPath on a Windows path). Rendered on demand and cached by the CDN.
 export const runtime = 'edge';
 
-export const alt = `${site.name} — ${site.role}`;
+export const alt = `${site.name} | ${site.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -55,7 +55,7 @@ export default function OpengraphImage() {
               lineHeight: 1.3,
             }}
           >
-            {site.role} — {site.headline}
+            {site.role} · {site.headline}
           </div>
         </div>
 
@@ -75,7 +75,7 @@ export default function OpengraphImage() {
           <span>·</span>
           <span>US &amp; AU clients</span>
           <span>·</span>
-          <span>Lighthouse 30 → 95</span>
+          <span>Lighthouse 30 → 92</span>
         </div>
       </div>
     ),

@@ -1,7 +1,7 @@
 import { GraduationCap } from 'lucide-react';
 import { timelineData, education, TimelineEntry, TimelineProject } from './timeline-data';
 
-// Newest role first — recruiters read top-down and care most about current work.
+// Newest role first; recruiters read top-down and care most about current work.
 const entries = [...timelineData].reverse();
 
 function StatusBadge({ label, strong }: { label: string; strong?: boolean }) {
@@ -34,8 +34,8 @@ export default function TimelineContent() {
     <section>
       <h1 className="font-serif text-4xl font-medium text-heading lg:text-5xl">Experience</h1>
       <p className="mt-3 max-w-2xl text-lg text-body">
-        Five years of roles, newest first — from my first Laravel job to leading e-commerce
-        rebuilds today.
+        Here&apos;s where I&apos;ve worked, newest first. It starts with my first Laravel job and goes
+        all the way to the e-commerce rebuilds I&apos;m leading now.
       </p>
 
       <ol className="relative ml-2 mt-12 border-l-2 border-line">
@@ -47,7 +47,7 @@ export default function TimelineContent() {
       <div className="mt-10 flex items-start gap-3 rounded-xl bg-surface p-5">
         <GraduationCap size={20} aria-hidden="true" className="mt-0.5 flex-shrink-0 text-royal" />
         <p className="text-body">
-          <span className="font-semibold text-heading">{education.degree}</span> — {education.school}{' '}
+          <span className="font-semibold text-heading">{education.degree}</span>, {education.school}{' '}
           <span className="text-muted">({education.duration})</span>
         </p>
       </div>
@@ -95,7 +95,7 @@ function ProjectSubItem({ project }: { project: TimelineProject }) {
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-sm font-semibold text-muted">{project.duration}</span>
         {project.current && <StatusBadge label="Current" strong />}
-        {!project.current && project.maintaining && <StatusBadge label="Live — maintaining" />}
+        {!project.current && project.maintaining && <StatusBadge label="Live, still maintaining" />}
       </div>
 
       <h3 className="mt-1 font-serif text-xl font-medium text-heading">{project.name}</h3>

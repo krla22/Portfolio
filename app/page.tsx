@@ -11,7 +11,7 @@ import ProjectCard from './components/project-card';
 import { site } from './lib/site';
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
+  title: `${site.name} | ${site.role}`,
   description: site.metaDescription,
 };
 
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
       <section id="projects">
         <SectionHeading
           title="Projects"
-          intro="Live client work, newest first. Each card links to a short case study with my role, results, and stack."
+          intro="Here's my client work, newest first. Open any card to see what I did and how it turned out."
         />
         <ProjectGroup id="ecommerce-projects" title="E-Commerce" projects={ecommerceProjects} />
         <ProjectGroup id="lead-gen-projects" title="Lead Generation" projects={leadGenProjects} />
@@ -118,8 +118,8 @@ export default function PortfolioPage() {
       <section id="contact" className="mt-24 rounded-xl bg-ink p-8 text-white sm:p-10">
         <h2 className="font-serif text-3xl font-medium">Let&apos;s talk</h2>
         <p className="mt-3 max-w-xl text-ink-text">
-          Open to new roles and happy to walk through any of these projects on a call — including
-          the private ones.
+          If you&apos;d like to chat, send me a message. I&apos;m happy to walk you through any of these
+          projects on a call, private ones included.
         </p>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           <li>

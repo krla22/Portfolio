@@ -15,8 +15,8 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} — ${site.role}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.role}`,
+    template: `%s | ${site.name}`,
   },
   description: site.metaDescription,
   // Shared directly with recruiters; kept out of search results on purpose.
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     type: 'profile',
     siteName: `${site.name} Portfolio`,
     url: siteUrl,
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description: site.metaDescription,
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description: site.metaDescription,
   },
 };

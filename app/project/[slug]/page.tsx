@@ -19,7 +19,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   }
 
   return {
-    title: `${project.title} — ${project.position}`,
+    title: `${project.title} | ${project.position}`,
     description: project.description,
   };
 }
@@ -130,7 +130,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
 
         {isPrivate && (
           <p className="rounded-xl bg-royal-tint p-5 text-royal-dark">
-            This project is private — happy to walk through it on a call.
+            This one&apos;s private, but I&apos;m happy to walk you through it on a call.
           </p>
         )}
       </div>
