@@ -21,7 +21,7 @@ export const site = {
     'Figma to launch, end to end',
   ],
   bio:
-    "I've spent the last five years building WordPress and WooCommerce sites for businesses in the US and Australia. I usually take a project all the way from Figma to launch: the custom theme, payments, shipping, hosting, DNS, and the SEO so people can actually find it. Lately, most of my work has been taking slow page-builder sites and rebuilding them as fast, custom-coded WordPress.",
+    "I've spent the last five years building WordPress and WooCommerce sites for businesses in the US and Australia. I usually take a project all the way from Figma to launch: the custom theme, payments, shipping, hosting, DNS, and the SEO so people can actually find it. Lately, most of my work has been taking slow page-builder sites that used Elementor and rebuilding them as fast, custom-coded WordPress.",
   /** Short form used for link previews (LinkedIn, email). */
   metaDescription:
     "I build fast, custom WordPress and WooCommerce sites for businesses in the US and Australia, from Figma all the way to launch.",
