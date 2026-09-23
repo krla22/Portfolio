@@ -15,22 +15,17 @@ export const metadata: Metadata = {
   description: site.metaDescription,
 };
 
-function SectionHeading({ title, intro }: { title: string; intro?: string }) {
-  return (
-    <div className="mb-8">
-      <h2 className="font-serif text-3xl font-medium text-heading">{title}</h2>
-      {intro && <p className="mt-2 max-w-2xl text-body">{intro}</p>}
-    </div>
-  );
+function SectionHeading({ title }: { title: string }) {
+  return <h2 className="mb-8 font-serif text-3xl font-medium text-heading">{title}</h2>;
 }
 
 function ProjectGroup({ id, title, projects }: { id: string; title: string; projects: Project[] }) {
   return (
     <div id={id} className="mt-12 first:mt-0">
-      <h3 className="mb-5 flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-royal">
+      <h2 className="mb-5 flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-royal">
         {title}
         <span className="h-px flex-1 bg-line" />
-      </h3>
+      </h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
@@ -85,10 +80,6 @@ export default function PortfolioPage() {
       </header>
 
       <section id="projects">
-        <SectionHeading
-          title="Projects"
-          intro="Here's my client work, newest first. Open any card to see what I did and how it turned out."
-        />
         <ProjectGroup id="ecommerce-projects" title="E-Commerce" projects={ecommerceProjects} />
         <ProjectGroup id="lead-gen-projects" title="Lead Generation" projects={leadGenProjects} />
         <ProjectGroup id="other-projects" title="Full Stack & Mobile" projects={archivedProjects} />

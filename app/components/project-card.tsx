@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="flex flex-grow flex-col p-6">
-        <h4 className="font-serif text-2xl font-medium text-heading">{project.title}</h4>
+        <h3 className="font-serif text-2xl font-medium text-heading">{project.title}</h3>
         <p className="mt-1 text-sm font-semibold text-royal">{project.position}</p>
         <p className="text-sm text-muted">{project.duration}</p>
 
