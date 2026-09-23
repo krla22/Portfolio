@@ -19,7 +19,7 @@ export default function OpengraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          backgroundColor: '#0A0C09',
+          backgroundColor: '#0B0B0B',
           padding: '72px 80px',
           fontFamily: 'sans-serif',
         }}
@@ -30,7 +30,7 @@ export default function OpengraphImage() {
               fontSize: 22,
               letterSpacing: 6,
               textTransform: 'uppercase',
-              color: '#2FA968',
+              color: '#3DBE7A',
             }}
           >
             Portfolio
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
               marginTop: 28,
               fontSize: 92,
               lineHeight: 1.05,
-              color: '#F3F1E6',
+              color: '#FFFFFF',
               fontWeight: 600,
             }}
           >
@@ -50,7 +50,7 @@ export default function OpengraphImage() {
             style={{
               marginTop: 20,
               fontSize: 34,
-              color: '#A6A395',
+              color: '#D6D6D6',
               maxWidth: 900,
               lineHeight: 1.3,
             }}
@@ -64,14 +64,14 @@ export default function OpengraphImage() {
             display: 'flex',
             alignItems: 'center',
             gap: 20,
-            borderTop: '1px solid #262A20',
+            borderTop: '1px solid #2A2A2A',
             paddingTop: 28,
             fontSize: 24,
-            color: '#A6A395',
+            color: '#D6D6D6',
             letterSpacing: 1,
           }}
         >
-          <span style={{ color: '#2FA968' }}>5 years</span>
+          <span style={{ color: '#3DBE7A' }}>5 years</span>
           <span>·</span>
           <span>US &amp; AU clients</span>
           <span>·</span>

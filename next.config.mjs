@@ -2,15 +2,16 @@
 const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
+  },
+  // Keep every page and the resume PDF out of search results. A header is used
+  // (not robots.txt Disallow) so crawlers can still see the noindex instruction.
+  async headers() {
+    return [
       {
-        // Live-site thumbnails. Replace these with committed screenshots under
-        // /public/projects/ when you have them — see project-data.ts `image`.
-        protocol: 'https',
-        hostname: 's.wordpress.com',
-        pathname: '/mshots/**',
+        source: '/:path*',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
-    ],
+    ];
   },
 };
 

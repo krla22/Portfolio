@@ -7,33 +7,13 @@
     scroll-behavior: smooth;
   }
 
+  /* Keep anchored section headings clear of the sticky mobile header. */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
   ::selection {
-    background-color: #2FA968;
-    color: #0A0C09;
+    background-color: #046A38;
+    color: #FFFFFF;
   }
-
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #0A0C09;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #1B1E16;
-    border: 2px solid #0A0C09;
-    border-radius: 999px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #2FA968;
-  }
-}
-
-.grain {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 40;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

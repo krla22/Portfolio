@@ -2,10 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowUpRight, ChevronLeft } from 'lucide-react';
-import { allProjects, getProjectBySlug, type Project } from '../project-data';
-import JsonLd from '../../components/json-ld';
-import { siteUrl } from '../../lib/site';
+import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronLeft } from 'lucide-react';
+import { allProjects, getProjectBySlug } from '../project-data';
 
 type PageProps = { params: { slug: string } };
 
@@ -20,27 +18,14 @@ export function generateMetadata({ params }: PageProps): Metadata {
     return { title: 'Project not found' };
   }
 
-  const title = `${project.title} — ${project.position}`;
-  const url = `${siteUrl}/project/${project.slug}`;
-
   return {
-    title,
+    title: `${project.title} — ${project.position}`,
     description: project.description,
-    alternates: { canonical: `/project/${project.slug}` },
-    openGraph: {
-      type: 'article',
-      url,
-      title,
-      description: project.description,
-      images: ['/opengraph-image'],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description: project.description,
-      images: ['/opengraph-image'],
-    },
   };
+}
+
+function Label({ children }: { children: React.ReactNode }) {
+  return <h2 className="text-sm font-semibold uppercase tracking-wider text-royal">{children}</h2>;
 }
 
 export default function ProjectDetailPage({ params }: PageProps) {
@@ -50,128 +35,139 @@ export default function ProjectDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    '@id': `${siteUrl}/project/${project.slug}#work`,
-    name: project.title,
-    headline: project.title,
-    description: project.summary,
-    url: `${siteUrl}/project/${project.slug}`,
-    ...(project.link !== '#' ? { sameAs: [project.link] } : {}),
-    author: { '@id': `${siteUrl}/#person` },
-    creator: { '@id': `${siteUrl}/#person` },
-    keywords: project.tech.join(', '),
-    isPartOf: { '@id': `${siteUrl}/#website` },
-  };
+  const index = allProjects.findIndex((p) => p.slug === project.slug);
+  const prev = index > 0 ? allProjects[index - 1] : undefined;
+  const next = index < allProjects.length - 1 ? allProjects[index + 1] : undefined;
+  const isPrivate = project.link === '#';
 
   return (
-    <div className="text-paper">
-      <JsonLd data={schema} />
+    <article>
+      <Link
+        href="/#projects"
+        className="inline-flex items-center gap-1 text-sm font-semibold text-royal hover:text-royal-dark hover:underline"
+      >
+        <ChevronLeft size={16} aria-hidden="true" />
+        All projects
+      </Link>
 
-      <div className="mb-10">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-moss hover:text-moss-bright transition-colors group"
-        >
-          <ChevronLeft
-            size={16}
-            aria-hidden="true"
-            className="group-hover:-translate-x-1 transition-transform"
-          />
-          <span>Back to all projects</span>
-        </Link>
-      </div>
+      <header className="mt-6">
+        <h1 className="font-serif text-4xl font-medium text-heading lg:text-5xl">{project.title}</h1>
+        <p className="mt-3 text-lg font-semibold text-royal">{project.position}</p>
+        <p className="text-muted">{project.duration}</p>
 
-      <ProjectDetailContent project={project} />
-
-      {project.lighthouseImage && (
-        <div className="mt-14">
-          <h2 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">
-            Performance Report
-          </h2>
-          <div className="mt-4 relative aspect-[2/1] bg-ink-2 border border-line overflow-hidden">
-            <Image
-              src={project.lighthouseImage}
-              alt={`Lighthouse desktop report for ${project.title}`}
-              fill
-              sizes="(min-width: 1024px) 70vw, 100vw"
-              className="object-contain"
-            />
-          </div>
-        </div>
-      )}
-
-      <div className="py-8 mt-10 border-t border-line">
-        {project.link === '#' ? (
-          <p className="font-mono text-xs uppercase tracking-wide text-bone/70">
-            This project is private — happy to walk through it on a call.
-          </p>
-        ) : (
+        {!isPrivate && (
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-full md:w-auto gap-2 bg-paper text-ink hover:bg-moss px-6 py-3 transition-colors font-mono text-xs uppercase tracking-wide"
+            className="mt-6 inline-flex items-center gap-2 rounded-md bg-royal px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-royal-dark"
           >
-            <span>View live site</span>
+            View live site
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         )}
-      </div>
-    </div>
-  );
-}
+      </header>
 
-function ProjectDetailContent({ project }: { project: Project }) {
-  return (
-    <div className="space-y-10">
-      <h1 className="font-serif text-4xl lg:text-5xl font-medium text-paper">{project.title}</h1>
+      {project.image && (
+        <div className="relative mt-10 aspect-[3/2] overflow-hidden rounded-xl border border-line bg-surface">
+          <Image
+            src={project.image}
+            alt={`Screenshot of the ${project.title} website`}
+            fill
+            priority
+            sizes="(min-width: 1024px) 60vw, 100vw"
+            className="object-cover object-top"
+          />
+        </div>
+      )}
 
-      <div>
-        <h2 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">
-          Role &amp; Duration
-        </h2>
-        <p className="text-lg text-paper mt-2">{project.position}</p>
-        <p className="text-sm text-bone/80 font-mono">{project.duration}</p>
+      <div className="mt-12 space-y-12">
+        <section>
+          <Label>About this project</Label>
+          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-body">{project.summary}</p>
+        </section>
+
+        <section>
+          <Label>Key wins</Label>
+          <ul className="mt-4 space-y-4">
+            {project.wins.map((win, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <win.icon aria-hidden="true" className="mt-1 h-5 w-5 flex-shrink-0 text-royal" />
+                <span className="text-lg leading-snug text-heading">{win.text}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <Label>Tech stack</Label>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {project.tech.map((tech) => (
+              <li
+                key={tech}
+                className="rounded-md border border-line bg-surface px-2.5 py-1 text-sm text-body"
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {project.lighthouseImage && (
+          <section>
+            <Label>Performance report</Label>
+            <div className="relative mt-4 aspect-[2/1] overflow-hidden rounded-xl border border-line bg-white">
+              <Image
+                src={project.lighthouseImage}
+                alt={`Lighthouse desktop report for ${project.title}`}
+                fill
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="object-contain"
+              />
+            </div>
+          </section>
+        )}
+
+        {isPrivate && (
+          <p className="rounded-xl bg-royal-tint p-5 text-royal-dark">
+            This project is private — happy to walk through it on a call.
+          </p>
+        )}
       </div>
 
-      <div>
-        <h2 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">
-          About This Project
-        </h2>
-        <p className="text-bone/80 mt-3 leading-relaxed max-w-3xl">{project.summary}</p>
-      </div>
-
-      <div>
-        <h2 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">
-          Key Wins
-        </h2>
-        <ul className="space-y-4 mt-4">
-          {project.wins.map((win, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <win.icon aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-moss mt-1" />
-              <span className="text-paper text-lg leading-snug">{win.text}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h2 className="font-mono text-xs font-semibold text-moss uppercase tracking-widest">
-          Tech Stack &amp; Tools
-        </h2>
-        <ul className="flex flex-wrap gap-2 mt-4">
-          {project.tech.map((tech) => (
-            <li
-              key={tech}
-              className="font-mono text-xs uppercase tracking-wide text-bone border border-line px-3 py-2"
-            >
-              {tech}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+      <nav
+        aria-label="More projects"
+        className="mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2"
+      >
+        {prev ? (
+          <Link
+            href={`/project/${prev.slug}`}
+            className="group rounded-xl border border-line p-5 transition-colors hover:border-royal"
+          >
+            <span className="flex items-center gap-1 text-sm text-muted">
+              <ArrowLeft size={14} aria-hidden="true" /> Previous
+            </span>
+            <span className="mt-1 block font-serif text-xl text-heading group-hover:text-royal">
+              {prev.title}
+            </span>
+          </Link>
+        ) : (
+          <span />
+        )}
+        {next && (
+          <Link
+            href={`/project/${next.slug}`}
+            className="group rounded-xl border border-line p-5 text-right transition-colors hover:border-royal"
+          >
+            <span className="flex items-center justify-end gap-1 text-sm text-muted">
+              Next <ArrowRight size={14} aria-hidden="true" />
+            </span>
+            <span className="mt-1 block font-serif text-xl text-heading group-hover:text-royal">
+              {next.title}
+            </span>
+          </Link>
+        )}
+      </nav>
+    </article>
   );
 }

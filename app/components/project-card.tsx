@@ -1,82 +1,64 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Eye, Lock } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Lock } from 'lucide-react';
 import type { Project } from '../project/project-data';
 
 export default function ProjectCard({ project }: { project: Project }) {
   const isPrivate = project.link === '#';
 
   return (
-    <article className="group border border-line bg-ink-2 flex flex-col transition-colors hover:border-moss/60">
-      <div className="relative h-64 overflow-hidden border-b border-line bg-ink-3">
+    <article className="flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-shadow hover:shadow-lg">
+      <div className="relative aspect-[3/2] overflow-hidden border-b border-line bg-surface">
         {project.image ? (
           <Image
             src={project.image}
             alt={`Screenshot of the ${project.title} website`}
             fill
-            sizes="(min-width: 1024px) 45vw, 100vw"
+            sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
             className="object-cover object-top"
           />
         ) : (
-          <div className="flex h-full flex-col items-center justify-center gap-3 text-bone/60">
+          <div className="flex h-full flex-col items-center justify-center gap-2 text-muted">
             <Lock size={22} aria-hidden="true" />
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em]">
-              Private project
-            </span>
+            <span className="text-sm font-medium">Private / NDA project</span>
           </div>
         )}
         {project.client && (
-          <span className="absolute top-3 left-3 bg-ink/90 text-moss font-mono text-[10px] uppercase tracking-wide px-2 py-1 border border-moss/40">
+          <span className="absolute left-3 top-3 rounded-md bg-ink px-2 py-1 text-xs font-medium text-white">
             {project.client}
           </span>
         )}
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="font-serif text-2xl font-medium text-paper">{project.title}</h3>
+      <div className="flex flex-grow flex-col p-6">
+        <h4 className="font-serif text-2xl font-medium text-heading">{project.title}</h4>
+        <p className="mt-1 text-sm font-semibold text-royal">{project.position}</p>
+        <p className="text-sm text-muted">{project.duration}</p>
 
-        <p className="font-mono text-xs text-moss uppercase tracking-wide mt-2">
-          {project.position}
-        </p>
-        <p className="font-mono text-[11px] text-bone/70 uppercase tracking-wide mt-1 mb-3">
-          {project.duration}
-        </p>
+        <p className="mb-5 mt-4 flex-grow leading-relaxed text-body">{project.description}</p>
 
-        <p className="text-bone/80 mb-6 leading-relaxed flex-grow text-sm">{project.description}</p>
+        <p className="mb-6 text-sm text-muted">{project.tech.join(' · ')}</p>
 
-        <ul className="flex flex-wrap gap-x-3 gap-y-1 mb-6 font-mono text-[11px] text-bone/70 uppercase tracking-wide">
-          {project.tech.map((tech) => (
-            <li key={tech} className="after:content-['/'] after:ml-3 last:after:content-none">
-              {tech}
-            </li>
-          ))}
-        </ul>
-
-        <div className="grid grid-cols-2 gap-3 mt-auto">
+        <div className="mt-auto flex flex-wrap gap-3">
           <Link
             href={`/project/${project.slug}`}
-            className="inline-flex items-center justify-center gap-2 border border-line hover:border-moss text-bone hover:text-moss px-5 py-3 transition-colors font-mono text-xs uppercase tracking-wide"
+            className="inline-flex items-center gap-2 rounded-md bg-royal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-royal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal focus-visible:ring-offset-2"
           >
-            <Eye size={16} aria-hidden="true" />
-            <span>Case study</span>
+            Case study
+            <ArrowRight size={16} aria-hidden="true" />
+            <span className="sr-only">: {project.title}</span>
           </Link>
 
-          {isPrivate ? (
-            <span
-              aria-disabled="true"
-              className="inline-flex items-center justify-center gap-2 border border-line text-bone/60 px-5 py-3 font-mono text-xs uppercase tracking-wide cursor-not-allowed"
-            >
-              Link private
-            </span>
-          ) : (
+          {!isPrivate && (
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-paper text-ink hover:bg-moss px-5 py-3 transition-colors font-mono text-xs uppercase tracking-wide"
+              className="inline-flex items-center gap-2 rounded-md border border-line px-4 py-2.5 text-sm font-semibold text-heading transition-colors hover:border-heading focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal focus-visible:ring-offset-2"
             >
-              <span>View site</span>
+              Live site
               <ArrowUpRight size={16} aria-hidden="true" />
+              <span className="sr-only">: {project.title} (opens in new tab)</span>
             </a>
           )}
         </div>

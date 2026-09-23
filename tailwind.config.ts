@@ -9,24 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Black sidebar / header
         ink: {
-          DEFAULT: '#0A0C09',
-          2: '#12140F',
-          3: '#1B1E16',
+          DEFAULT: '#0B0B0B',
+          2: '#151515',
+          line: '#2A2A2A',
+          text: '#D6D6D6',
         },
-        line: '#262A20',
-        bone: '#A6A395',
-        paper: '#F3F1E6',
-        moss: {
-          DEFAULT: '#2FA968',
-          dim: '#1C6B44',
-          bright: '#4FCB86',
+        // White content area
+        heading: '#111111',
+        body: '#3F3F3F',
+        muted: '#5E5E5E',
+        line: '#E4E4E4',
+        surface: '#F6F7F6',
+        // Royal green — DEFAULT passes AA as text on white and under white text;
+        // use `light` for green text on black.
+        royal: {
+          DEFAULT: '#046A38',
+          dark: '#03522B',
+          light: '#3DBE7A',
+          tint: '#E8F3ED',
         },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
         serif: ['var(--font-fraunces)', 'serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
       },
     },
   },

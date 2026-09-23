@@ -75,10 +75,10 @@ export const timelineData: TimelineEntry[] = [
     description:
       "Lead developer overseeing the multi-state digital presence (AZ, FL, SC), responsible for the entire technical website rebuild and organic growth infrastructure.",
     highlights: [
-      "Modernized a legacy WordPress site into a high-performance system, improving load times from 7s to 1s and raising Lighthouse scores from 30 to 95+ to secure mobile rankings.",
+      "Modernized a legacy WordPress site into a high-performance system, improving load times from 7s to 1s and raising Lighthouse scores from 30 to 95 to secure mobile rankings.",
       "Built and optimized a programmatic landing page architecture for multi-state expansion, driving a 30%+ increase in lead volume through localized \"City + Service\" targeting.",
       "Integrated GA4, GTM, and custom event tracking to visualize checkout behavior, then re-engineered the lead capture forms to maximize conversion rates.",
-      "Established disaster recovery protocols and 24/7 monitoring systems, maintaining 99.9% uptime for business-critical lead generation portals during high-traffic ad campaigns.",
+      "Put monitoring and backup recovery in place for the business-critical lead generation portals ahead of high-traffic ad campaigns.",
     ],
   },
   {
@@ -90,7 +90,7 @@ export const timelineData: TimelineEntry[] = [
       "Senior SEO lead and developer managing teams to deliver client-facing websites and growth platforms for US businesses. Served as technical lead for a business servicing high-profile clients, including Integrate IQ (HubSpot Diamond Partner), United Law, and Hygeia Health.",
     highlights: [
       "Directed technical strategy for Integrate IQ (HubSpot Diamond Partner) and United Law, managing site migrations, directory listings, and API integrations that aligned development with aggressive marketing goals.",
-      "Built modular WordPress frameworks using reusable ACF Pro modules and custom Schema automation, cutting development cycles by 40% while ensuring perfect structured page data.",
+      "Built modular WordPress frameworks using reusable ACF Pro modules and automated schema output, so new client sites reused the same components instead of starting from zero.",
       "Managed and mentored a distributed team of developers and freelancers, enforcing semantic HTML standards and rigorous QA processes that reduced technical debt and on-page SEO errors.",
       "Engineered custom Filevine API integrations for legal clients and real-time HubSpot data syncs, ensuring seamless data flow between the frontend and CRM.",
     ],
@@ -147,7 +147,6 @@ export const timelineData: TimelineEntry[] = [
           "Maintained high Lighthouse performance scores despite the added checkout and shipping logic.",
           "Implemented real-time, Australia-wide shipping rate calculations at checkout.",
           "Secured checkout with Cloudflare Turnstile and locked down the domain with custom Cloudflare firewall rules and DNS records (SPF/DKIM).",
-          "Site is being surfaced by AI chat assistants (e.g. ChatGPT, Gemini) as a recommendation for welding table searches in Australia.",
         ],
       },
     ],

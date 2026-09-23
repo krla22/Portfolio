@@ -27,7 +27,7 @@ export const leadGenProjects: Project[] = [
     description: "Multi-state rebuild and organic growth infrastructure for an auto glass network.",
     tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "GTM", "Kinsta", "Cloudflare"],
     link: "https://nuvisionautoglass.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnuvisionautoglass.com?w=1200&h=800",
+    image: "/projects/nuvisionautoglass.png",
     lighthouseImage: "/lighthouse/nv-desktop.png",
     position: "Lead Web Developer",
     duration: "April 2025 - December 2025",
@@ -46,7 +46,7 @@ export const leadGenProjects: Project[] = [
     description: "Web agency I co-founded, building growth platforms for US businesses.",
     tech: ["WordPress", "ACF Pro", "PHP", "Schema Automation", "GTM", "GA4", "HubSpot API", "Filevine API"],
     link: "https://nurosparx.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnurosparx.com?w=1200&h=800",
+    image: "/projects/nurosparx.png",
     lighthouseImage: "/lighthouse/nx-desktop.png",
     position: "Co-founder & Lead Developer",
     duration: "July 2025 - December 2025",
@@ -64,7 +64,7 @@ export const leadGenProjects: Project[] = [
     description: "A multi-state legal platform built for local search visibility.",
     tech: ["WordPress", "ACF Pro", "PHP", "JSON-LD Schema", "Local SEO", "Kinsta", "Filevine API"],
     link: "https://unitedlawpa.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Funitedlawpa.com?w=1200&h=800",
+    image: "/projects/unitedlawpa.png",
     client: "NuroSparX Client",
     lighthouseImage: "/lighthouse/ul-desktop.png",
     position: "Lead Developer",
@@ -82,7 +82,7 @@ export const leadGenProjects: Project[] = [
     description: "B2B marketing site for a HubSpot Diamond Partner.",
     tech: ["WordPress", "ACF Pro", "PHP", "Technical SEO", "HubSpot API", "GTM", "WP Engine"],
     link: "https://integrateiq.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fintegrateiq.com?w=1200&h=800",
+    image: "/projects/integrateiq.png",
     client: "NuroSparX Client",
     lighthouseImage: "/lighthouse/iq-desktop.png",
     position: "Lead Developer",
@@ -100,7 +100,7 @@ export const leadGenProjects: Project[] = [
     description: "Insurance sales platform with multi-channel ad attribution.",
     tech: ["WordPress", "ACF Pro", "PHP", "HubSpot", "GA4", "GTM", "Kinsta"],
     link: "https://theoptico.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftheoptico.com?w=1200&h=800",
+    image: "/projects/theoptico.png",
     client: "NuVision Sister Company",
     lighthouseImage: "/lighthouse/to-desktop.png",
     position: "Lead Web Developer",
@@ -121,7 +121,9 @@ export const ecommerceProjects: Project[] = [
     description: "Australian WooCommerce storefront with split freight routing and card payments.",
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "CyberSource", "TNT", "Mainfreight", "Cloudflare"],
     link: "https://ozcutweldingtables.com.au/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fozcutweldingtables.com.au?w=1200&h=800",
+    image: "/projects/ozcutweldingtables.png",
+    // TODO: add public/lighthouse/oz-desktop.png, then uncomment:
+    // lighthouseImage: "/lighthouse/oz-desktop.png",
     position: "Senior WordPress Developer",
     duration: "June 2026 - Present",
     summary: "I rebuilt Ozcut Abrasives into Ozcut Welding Tables, replacing an Elementor storefront with a fully custom-coded WooCommerce theme built from the group designer's Figma files. I had already taken over checkout fixes and PageSpeed work on the legacy site before the rebuild started.",
@@ -130,7 +132,6 @@ export const ecommerceProjects: Project[] = [
       { icon: Truck, text: "Split TNT/Mainfreight routing so welding tables ship on the heavy goods carrier while smaller items stay on standard freight." },
       { icon: CreditCard, text: "Wired up CyberSource card payments with real-time, Australia-wide shipping rates at checkout." },
       { icon: Shield, text: "Secured checkout with Cloudflare Turnstile and locked down the domain with custom firewall rules and DNS records (SPF/DKIM)." },
-      { icon: Bot, text: "Site is being surfaced by AI chat assistants (ChatGPT, Gemini) as a recommendation for welding table searches in Australia." },
     ]
   },
   {
@@ -139,7 +140,9 @@ export const ecommerceProjects: Project[] = [
     description: "Multi-region WooCommerce multisite serving Australia and Canada.",
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "Multisite", "Airwallex", "Freightcom", "Cloudflare"],
     link: "https://thefullgrip.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fthefullgrip.com?w=1200&h=800",
+    image: "/projects/thefullgrip.png",
+    // TODO: add public/lighthouse/fg-desktop.png, then uncomment:
+    // lighthouseImage: "/lighthouse/fg-desktop.png",
     position: "Senior WordPress Developer",
     duration: "April 2026 - June 2026",
     summary: "The Full Grip runs as a WooCommerce multisite — four sites total — serving Australia and Canada independently. I migrated it off Elementor to a fully custom-coded theme, wiring Airwallex payments and Freightcom shipping per region while keeping performance high across every storefront. Still under active maintenance.",
@@ -157,7 +160,9 @@ export const ecommerceProjects: Project[] = [
     description: "Global WooCommerce multisite with a custom quotation system.",
     tech: ["WordPress", "WooCommerce", "PHP", "Custom Theme", "ACF Pro", "Multisite", "CyberSource", "TNT", "Cloudflare"],
     link: "https://tenaxistables.com/",
-    image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftenaxistables.com?w=1200&h=800",
+    image: "/projects/tenaxistables.png",
+    // TODO: add public/lighthouse/tx-desktop.png, then uncomment:
+    // lighthouseImage: "/lighthouse/tx-desktop.png",
     position: "Senior WordPress Developer",
     duration: "February 2026 - April 2026",
     summary: "Tenaxis Tables was built from the ground up as a global-first WooCommerce multisite, with dedicated subsites for Canada, New Zealand, and the UK on top of worldwide reach. I built a custom quotation and shipping system for destinations where flat-rate shipping isn't viable — it now runs on all three of the group's brands. Still under active maintenance.",
@@ -219,21 +224,14 @@ export const archivedProjects: Project[] = [
   }
 ];
 
-export const skills = [
-  // WordPress
-  "Custom Themes", "Custom Plugins", "ACF Pro", "WooCommerce", "Multisite", "Elementor", "Divi",
-  // Frontend
-  "JavaScript (ES6+)", "TypeScript", "React", "Next.js", "React Native", "Tailwind CSS", "SCSS", "Vite",
-  // Backend
-  "PHP", "Laravel", "MySQL", "REST API", "GraphQL", "Python",
-  // E-commerce
-  "CyberSource", "Airwallex", "TNT", "Mainfreight", "Freightcom",
-  // SEO & analytics
-  "Technical SEO", "Core Web Vitals", "JSON-LD Schema", "GA4", "GTM", "Search Console", "Google Ads", "Microsoft Clarity",
-  // Hosting & infra
-  "Kinsta", "WP Engine", "Cloudflare", "Google Cloud", "Docker", "DNS (SPF/DKIM)",
-  // Automation
-  "HubSpot", "Zapier", "n8n", "Local LLM Hosting", "Chatbot Integrations"
+export const skillGroups: { label: string; items: string[] }[] = [
+  { label: "WordPress", items: ["Custom Themes", "Custom Plugins", "ACF Pro", "WooCommerce", "Multisite", "Elementor", "Divi"] },
+  { label: "Frontend", items: ["JavaScript (ES6+)", "TypeScript", "React", "Next.js", "React Native", "Tailwind CSS", "SCSS", "Vite"] },
+  { label: "Backend", items: ["PHP", "Laravel", "MySQL", "REST API", "GraphQL", "Python"] },
+  { label: "E-commerce", items: ["CyberSource", "Airwallex", "TNT", "Mainfreight", "Freightcom"] },
+  { label: "SEO & Analytics", items: ["Technical SEO", "Core Web Vitals", "JSON-LD Schema", "GA4", "GTM", "Search Console", "Google Ads", "Microsoft Clarity"] },
+  { label: "Hosting & Infra", items: ["Kinsta", "WP Engine", "Cloudflare", "Google Cloud", "Docker", "DNS (SPF/DKIM)"] },
+  { label: "Automation", items: ["HubSpot", "Zapier", "n8n", "Local LLM Hosting", "Chatbot Integrations"] },
 ];
 
 export const allProjects: Project[] = [
